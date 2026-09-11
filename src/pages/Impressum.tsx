@@ -1,0 +1,135 @@
+import React from 'react';
+import { ArrowLeft, Shield, Mail, Phone, MapPin, Scale } from 'lucide-react';
+
+interface ImpressumProps {
+  onBack: () => void;
+}
+
+export const Impressum: React.FC<ImpressumProps> = ({ onBack }) => {
+  return (
+    <div className="py-12 bg-white min-h-[70vh]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <button
+          onClick={onBack}
+          className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 hover:text-emerald-800 mb-8 p-2 rounded-lg hover:bg-emerald-50 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Zurück zur Startseite</span>
+        </button>
+
+        <div className="border-b border-slate-200 pb-6 mb-8">
+          <span className="badge-slate mb-2">Rechtliche Anbieterkennzeichnung</span>
+          <h1 className="text-3xl font-extrabold text-slate-950 tracking-tight">
+            Impressum
+          </h1>
+          <p className="text-sm text-slate-600 mt-1">
+            Gesetzliche Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)
+          </p>
+        </div>
+
+        <div className="space-y-8 text-sm text-slate-700 leading-relaxed">
+          {/* Angaben nach § 5 DDG */}
+          <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h2 className="text-lg font-bold text-slate-950 mb-4 flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-emerald-600" />
+              Angaben gemäß § 5 DDG
+            </h2>
+            <div className="space-y-1 font-medium text-slate-900">
+              <p className="font-bold text-base">Jens Kathe</p>
+              <p>Hansastraße 6</p>
+              <p>34119 Kassel</p>
+              <p>Deutschland</p>
+            </div>
+          </section>
+
+          {/* Kontakt */}
+          <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h2 className="text-lg font-bold text-slate-950 mb-4 flex items-center gap-2">
+              <Mail className="w-5 h-5 text-emerald-600" />
+              Schnelle elektronische Kontaktaufnahme
+            </h2>
+            <div className="space-y-2">
+              <p className="flex items-center gap-2">
+                <span className="text-slate-500 w-24">E-Mail:</span>
+                <a href="mailto:jens@kathe.org" className="font-bold text-emerald-700 hover:underline">
+                  jens@kathe.org
+                </a>
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="text-slate-500 w-24 flex items-center gap-1">
+                  <Phone className="w-3.5 h-3.5 text-slate-400" />
+                  Telefon:
+                </span>
+                <a href="tel:+491786652623" className="font-bold text-slate-900 hover:underline">
+                  +49 178 6652623
+                </a>
+              </p>
+            </div>
+          </section>
+
+          {/* Steuerlicher Status */}
+          <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h2 className="text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+              <Scale className="w-5 h-5 text-emerald-600" />
+              Umsatzsteuer &amp; Besteuerung
+            </h2>
+            <p className="font-bold text-slate-900">
+              Kleinunternehmer nach § 19 UStG
+            </p>
+            <p className="text-xs text-slate-500 mt-1">
+              Als Kleinunternehmer im Sinne von § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet oder gesondert ausgewiesen.
+            </p>
+          </section>
+
+          {/* Redaktionell Verantwortlicher */}
+          <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h2 className="text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+              <Shield className="w-5 h-5 text-emerald-600" />
+              Inhaltlich Verantwortlicher gemäß § 18 Abs. 2 MStV
+            </h2>
+            <p className="font-medium text-slate-900">
+              Jens Kathe<br />
+              Hansastraße 6<br />
+              34119 Kassel<br />
+              Deutschland
+            </p>
+          </section>
+
+          {/* Verbraucherstreitbeilegung */}
+          <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h2 className="text-lg font-bold text-slate-950 mb-3">
+              Verbraucherstreitbeilegung &amp; Online-Streitbeilegung
+            </h2>
+            <p className="text-xs text-slate-600 leading-relaxed mb-3">
+              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die Sie unter folgendem Link finden:{' '}
+              <a
+                href="https://ec.europa.eu/consumers/odr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-700 underline font-bold"
+              >
+                https://ec.europa.eu/consumers/odr
+              </a>.
+            </p>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
+          </section>
+
+          {/* Transparenzhinweis Unabhängiges Informationsportal */}
+          <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h2 className="text-lg font-bold text-slate-950 mb-3">
+              Unabhängigkeit &amp; Nicht-kommerzieller Informationscharakter
+            </h2>
+            <p className="text-xs text-slate-600 leading-relaxed mb-3">
+              Dieses Portal (reparaturpflicht.de) ist ein rein redaktionelles, unabhängiges Informationsangebot. Es steht in keinem gesellschaftsrechtlichen Verhältnis zu den auf dieser Webseite genannten Herstellern, Marken oder Reparaturbetrieben. Alle genannten Markennamen und Warenzeichen sind Eigentum der jeweiligen Rechteinhaber und dienen ausschließlich der sachlichen Information und Geräteidentifikation.
+            </p>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Dieses Portal verzichtet bewusst auf Affiliate- und Werbelinks. Sämtliche bereitgestellten Inhalte, Prüf-Tools und Modellrechner sind kostenfrei und dienen der neutralen Verbraucheraufklärung.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+};

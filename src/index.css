@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Accessibility & Utility Classes */
+.badge-amber {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-amber-100 text-amber-950 border border-amber-300;
+}
+
+.badge-emerald {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-900 border border-emerald-300;
+}
+
+.badge-slate {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-300;
+}
+
+/* High Contrast Buttons */
+.btn-primary-amber {
+  @apply inline-flex items-center justify-center font-extrabold text-slate-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 shadow-sm hover:shadow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500;
+}
+
+.btn-primary-emerald {
+  @apply inline-flex items-center justify-center font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 shadow-sm hover:shadow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-600;
+}
+
+.btn-dark {
+  @apply inline-flex items-center justify-center font-bold text-white bg-slate-900 hover:bg-slate-800 active:bg-slate-950 shadow-sm hover:shadow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400;
+}

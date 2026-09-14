@@ -1,0 +1,15 @@
+# reparaturpflicht.de – Verbraucher-Leitfaden zum EU-Recht auf Reparatur
+
+> Fachportal zur EU-Richtlinie (EU) 2024/1799 (Right to Repair) sowie zu den Ökodesign-Vorgaben für elektronische Geräte in Deutschland und Europa.
+
+## Gesetzliche Eckpfeiler
+- **Ersatzteilverfügbarkeit:** Pflicht der Hersteller zur Bereitstellung gängiger Ersatzteile über 7 bis 10 Jahre nach Modell-Einstellung.
+- **Verbot von Software-Sperren:** Untersagung von Bauteil-Pairing (Part Pairing) und künstlichen Software-Blockaden gegen freie Reparaturwerkstätten.
+- **Verlängerung der Gewährleistung:** 12 Monate Verlängerung der Sachmängelhaftung bei Durchführung einer Reparatur im Gewährleistungszeitraum.
+- **Europäisches Reparaturformular:** Standardisierte Kostenvoranschläge zur transparenten Vergleichbarkeit.
+
+## Tools & Rechner
+- **/rechner-embed:** Interaktiver Reparatur-Wirtschaftlichkeitsrechner (Vergleich Reparatur vs. Neukauf, CO2-Einsparung, Reparaturbonus-Abzug).
+
+## Impressum & Neutralität
+- Vollständige Betreiberangaben nach § 5 DDG unter /impressum.

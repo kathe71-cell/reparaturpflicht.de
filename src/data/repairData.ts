@@ -294,49 +294,49 @@ export const FAQS: FaqItem[] = [
   {
     id: 'faq-1',
     category: 'recht',
-    question: 'Haben Verbraucher in Deutschland eine rechtliche Pflicht zur Reparatur?',
-    answer: 'Nein. Für Privatpersonen existiert in Deutschland kein Reparaturzwang. Wenn Ihr Gerät defekt ist, können Sie frei entscheiden, ob Sie es reparieren lassen, als Ersatzteilspender abgeben oder fachgerecht über den Wertstoffhof bzw. den Handel nach ElektroG entsorgen. Der Begriff "Reparaturpflicht" bezieht sich im juristischen Sinne auf Pflichten der Hersteller und Händler (z. B. Bevorratung von Ersatzteilen, Bereitstellung von Demontageanleitungen und Vorrang der Nacherfüllung im BGB-Kaufrecht).'
+    question: 'Was besagt das Recht auf Reparatur (EU-Richtlinie 2024/1799) genau?',
+    answer: 'Die EU-Richtlinie 2024/1799 (Recht auf Reparatur) stärkt Verbraucher und Fachbetriebe durch vier zentrale Pfeiler: 1. Hersteller müssen auch nach Ablauf der 2-jährigen Gewährleistung Reparaturen zu angemessenen Preisen und Fristen anbieten. 2. Entscheidet sich ein Verbraucher innerhalb der Gewährleistung für eine Reparatur statt für ein Ersatzgerät, verlängert sich die Sachmängelhaftung um zusätzliche 12 Monate. 3. Software-Sperren ("Part-Pairing") und vertragliche Hürden gegen freie Werkstätten und gebrauchte Ersatzteile werden untersagt. 4. Ein europäisches standardisiertes Reparatur-Informationsformular sorgt für transparente Kostenvoranschläge.'
   },
   {
     id: 'faq-2',
     category: 'recht',
-    question: 'Was regelt die EU-Richtlinie zum Recht auf Reparatur (EU 2024/1799)?',
-    answer: 'Die im Jahr 2024 verabschiedete EU-Richtlinie 2024/1799 stärkt Verbraucherrechte grundlegend: 1. Hersteller müssen für bestimmte Produktgruppen (u. a. Haushaltsgeräte, Smartphones) Reparaturen auch nach Ablauf der gesetzlichen Gewährleistung zu angemessenen Preisen anbieten. 2. Wenn sich ein Verbraucher innerhalb der gesetzlichen 2-jährigen Gewährleistung für eine Reparatur statt eines Neugeräte-Austauschs entscheidet, verlängert sich die Sachmängelhaftung um weitere 12 Monate. 3. Software-Barrieren ("Part-Pairing"), die den Einbau von gebrauchten oder Dritthersteller-Ersatzteilen blockieren, werden untersagt.'
+    question: 'Ab wann gilt das europäische Recht auf Reparatur in Deutschland?',
+    answer: 'Die EU-Richtlinie 2024/1799 ist Mitte 2024 in Kraft getreten. Die Bundesrepublik Deutschland und alle anderen EU-Staaten setzen die Richtlinie bis spätestens Sommer 2026 verbindlich in nationales Recht (insbesondere deutsches Kaufrecht und BGB) um. Wichtig für Verbraucher: Zahlreiche produktspezifische Ökodesign-Vorgaben für Ersatzteile (z. B. für Smartphones, Tablets, Waschmaschinen und Kühlschränke) gelten bereits jetzt unmittelbar.'
   },
   {
     id: 'faq-3',
     category: 'hersteller',
-    question: 'Wie lange müssen Hersteller gesetzlich Ersatzteile vorhalten?',
-    answer: 'Die genaue Frist richtet sich nach der europäischen Ökodesign-Verordnung für die jeweilige Geräteart: Für Waschmaschinen, Haushaltsgeschirrspüler und Kühlgeräte beträgt die Frist 7 bis 10 Jahre nach dem Inverkehrbringen des letzten Geräts der Baureihe. Für Smartphones und Tablets gilt ab Sommer 2025 eine verbindliche Bereithaltung von 7 Jahren für sicherheits- und funktionsrelevante Komponenten. Zudem dürfen Ersatzteile maximal 10 bis 15 Arbeitstage Lieferzeit in Anspruch nehmen.'
+    question: 'Welche Geräte fallen unter das Recht auf Reparatur?',
+    answer: 'Unter das Recht auf Reparatur fallen zunächst alle Produktgruppen mit bestehenden EU-Ökodesign-Reparaturvorgaben: Smartphones, Mobiltelefone, Tablets, Waschmaschinen, Haushalts-Wäschetrockner, Geschirrspüler, Kühlschränke und Gefriergeräte, Fernseher und elektronische Displays, Schweißgeräte sowie Staubsauger. Die EU-Kommission erweitert den Kreis der erfassten Elektrogeräte im Rahmen der Ökodesign-Rahmenverordnung (ESPR) kontinuierlich.'
   },
   {
     id: 'faq-4',
-    category: 'hersteller',
-    question: 'Dürfen Hersteller Reparaturen durch freie Werkstätten oder Laien blockieren?',
-    answer: 'Nein. Die EU-Gesetzgebung verbietet es Herstellern explizit, Reparaturen durch vertragliche Klauseln, Hard- oder Software-Mechanismen zu behindern. Sogenannte Serialisierungen ("Part-Pairing"), bei denen ein ausgetauschtes Display oder ein neuer Akku ohne herstellereigene Kalibrier-Software Fehlermeldungen wirft oder den Dienst verweigert, verstoßen gegen die neuen EU-Vorgaben.'
+    category: 'recht',
+    question: 'Haben Verbraucher in Deutschland eine rechtliche Pflicht zur Reparatur?',
+    answer: 'Nein. Für Privatpersonen existiert in Deutschland kein Reparaturzwang. Wenn Ihr Gerät defekt ist, können Sie frei entscheiden, ob Sie es reparieren lassen, als Teilespender abgeben oder fachgerecht über den Wertstoffhof bzw. den Handel nach ElektroG entsorgen. Der Begriff "Reparaturpflicht" bezieht sich im juristischen Sinne auf Pflichten der Hersteller und Händler (z. B. Bevorratung von Ersatzteilen, Bereitstellung von Demontageanleitungen und Vorrang der Nacherfüllung im BGB-Kaufrecht).'
   },
   {
     id: 'faq-5',
-    category: 'bonus',
-    question: 'Wie funktioniert der Reparaturbonus und wer hat Anspruch darauf?',
-    answer: 'Der Reparaturbonus ist ein Zuschuss der Bundesländer (z. B. Thüringen, Sachsen, Berlin) für Bürger mit Hauptwohnsitz im jeweiligen Bundesland. Gefördert werden in der Regel 50 % der belegten Reparaturrechnung bis zu maximal 100 bis 200 Euro pro Person und Jahr. Häufig werden auch Materialkosten für Selbstreparaturen gefördert, sofern die Ersatzteilrechnung vorgelegt wird. Die Einreichung erfolgt digital über das zuständige Förderportal.'
+    category: 'hersteller',
+    question: 'Wie lange müssen Hersteller gesetzlich Ersatzteile vorhalten?',
+    answer: 'Die Frist richtet sich nach der Ökodesign-Verordnung des jeweiligen Gerätetyps: Für Haushaltsgroßgeräte (Waschmaschinen, Geschirrspüler, Kühlgeräte) beträgt die Pflicht 7 bis 10 Jahre ab Produktionsstopp des Modells. Für Smartphones und Tablets gilt eine verbindliche Vorhaltefrist von 7 Jahren für Akkus, Displays und Kameras. Zudem dürfen Ersatzteile maximal 10 bis 15 Arbeitstage Lieferzeit in Anspruch nehmen.'
   },
   {
     id: 'faq-6',
-    category: 'kosten',
-    question: 'Wann lohnt sich eine Reparatur im Vergleich zum Neukauf wirtschaftlich?',
-    answer: 'Als bewährte Faustformel gilt: Liegen die Reparaturkosten unter 30 bis 40 Prozent des aktuellen Wiederbeschaffungswertes eines vergleichbaren Neugeräts, ist die Reparatur in den allermeisten Fällen wirtschaftlich vorteilhaft. Bei hochwertigen Haushaltsgeräten (z. B. von Miele oder Bosch) lohnt sich eine Reparatur oft selbst bei höheren Kosten, da die robuste Mechanik für eine Lebensdauer von 15 bis 20 Jahren ausgelegt ist.'
+    category: 'hersteller',
+    question: 'Dürfen Hersteller Reparaturen durch freie Werkstätten oder Selbstreparatur blockieren?',
+    answer: 'Nein. Die EU-Gesetzgebung untersagt Herstellern explizit jegliche Behinderung durch Software, Hardware oder Vertragsklauseln. Sogenanntes "Part-Pairing" (Serialisierung von Ersatzteilen), bei dem ein neues Bauteil ohne teure Hersteller-Freischaltung Fehlermeldungen erzeugt oder Funktionen abschaltet, ist nach den neuen Vorgaben unzulässig.'
   },
   {
     id: 'faq-7',
-    category: 'kosten',
-    question: 'Welchen ökologischen Nutzen bringt das Reparieren tatsächlich?',
-    answer: 'Die Herstellung von elektronischen Geräten verursacht zwischen 70 und 85 Prozent des gesamten Lebenszyklus-CO₂-Fußabdrucks (insbesondere durch Halbleiterproduktion, Metallabbau und globale Lieferketten). Durch die Verlängerung der Nutzungsdauer eines Smartphones um nur zwei Jahre können im Schnitt rund 50 kg CO₂e eingespart werden; bei einer Waschmaschine sind es über 100 kg CO₂e und bis zu 70 kg vermiedener Elektroschrott.'
+    category: 'bonus',
+    question: 'Wie funktioniert der staatliche Reparaturbonus (bis zu 200 €)?',
+    answer: 'Der Reparaturbonus erstattet Bürgern in teilnehmenden Bundesländern (z. B. Thüringen, Sachsen, Berlin) in der Regel 50 % der belegten Reparaturkosten bis zu 100 bzw. 200 Euro pro Kalenderjahr. In vielen Programmen werden auch die reinen Materialkosten für Selbstreparaturen (z. B. in Repair-Cafés) gefördert. Die Beantragung erfolgt einfach digital mit Hochladen der Werkstatt- oder Ersatzteilrechnung.'
   },
   {
     id: 'faq-8',
-    category: 'recht',
-    question: 'Welche Rechte habe ich innerhalb der ersten 2 Jahre nach dem Kauf?',
-    answer: 'Innerhalb der ersten 2 Jahre greift die gesetzliche Sachmängelhaftung (Gewährleistung) gegenüber dem Verkäufer (§ 437 BGB). In den ersten 12 Monaten gilt die Beweislastumkehr zugunsten des Käufers: Es wird vermutet, dass der Mangel bereits beim Kauf vorlag. Sie haben als Käufer das Recht, zwischen Nachbesserung (Reparatur) oder Nachlieferung (Ersatzgerät) zu wählen, sofern die gewählte Variante für den Verkäufer nicht unverhältnismäßig teuer ist.'
+    category: 'kosten',
+    question: 'Wann lohnt sich eine Reparatur im Vergleich zum Neukauf wirtschaftlich?',
+    answer: 'Als Faustregel gilt: Liegen die Reparaturkosten unter 35 bis 40 % des Neupreises eines gleichwertigen Ersatzgeräts, lohnt sich die Instandsetzung wirtschaftlich fast immer. Zudem sinken die tatsächlichen Kosten pro Nutzungsjahr (TCO): Bei einer 140-€-Reparatur, die das Gerät 3 weitere Jahre sichert, zahlen Sie rechnerisch nur rund 47 € pro weiterem Nutzungsjahr – weit weniger als der Wertverlust eines neuen Geräts.'
   }
 ];

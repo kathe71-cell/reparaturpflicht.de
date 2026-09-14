@@ -48,12 +48,8 @@ export const Datenschutz: React.FC<DatenschutzProps> = ({ onBack }) => {
               <UserCheck className="w-5 h-5 text-emerald-600" />
               2. Verantwortliche Stelle
             </h2>
-            <div className="text-xs text-slate-700 space-y-1">
-              <p className="font-bold text-slate-900 text-sm">Jens Kathe</p>
-              <p>Hansastraße 6</p>
-              <p>34119 Kassel, Deutschland</p>
-              <p>E-Mail: <a href="mailto:jens@kathe.org" className="text-emerald-700 font-bold hover:underline">jens@kathe.org</a></p>
-              <p>Telefon: +49 178 6652623</p>
+            <div className="text-xs text-slate-700">
+              <p>Verantwortlicher im Sinne der DSGVO ist der im Impressum genannte Website-Betreiber. Vollständige Kontaktdaten finden Sie im <a href="/impressum" className="text-emerald-700 font-bold hover:underline">Impressum</a>.</p>
             </div>
           </section>
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reparaturpflicht.de – EU-Recht auf Reparatur & Ökodesign-Vorgaben</title>
+    <link>https://reparaturpflicht.de/</link>
+    <description>Unabhängiger Leitfaden zur europäischen Richtlinie (EU) 2024/1799 über gemeinsame Vorschriften zur Reparatur von Waren und staatliche Reparaturboni.</description>
+    <language>de-DE</language>
+    <lastBuildDate>Mon, 14 Sep 2026 10:25:27 GMT</lastBuildDate>
+    <atom:link href="https://reparaturpflicht.de/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Reparatur-Wirtschaftlichkeitsrechner</title>
+      <link>https://reparaturpflicht.de/rechner-embed</link>
+      <description>Kosten- und CO2-Vergleich zwischen Reparatur und Neuanschaffung.</description>
+      <pubDate>Mon, 14 Sep 2026 10:25:27 GMT</pubDate>
+      <guid>https://reparaturpflicht.de/rechner-embed</guid>
+    </item>
+    <item>
+      <title>EU-Richtlinie 2024/1799 im Überblick</title>
+      <link>https://reparaturpflicht.de/#guide</link>
+      <description>Neue Pflichten für Hersteller von Smartphones, Waschmaschinen und Laptops.</description>
+      <pubDate>Mon, 14 Sep 2026 10:25:27 GMT</pubDate>
+      <guid>https://reparaturpflicht.de/#guide</guid>
+    </item>
+  </channel>
+</rss>

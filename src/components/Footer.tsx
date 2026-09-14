@@ -24,9 +24,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Unabhängiger Verbraucher-Leitfaden zum europäischen Recht auf Reparatur (EU-Richtlinie 2024/1799) und deutschen Ökodesign-Vorgaben. Für längere Gerätenutzung, weniger Elektroschrott und echte Kostenersparnis.
             </p>
             <div className="pt-2 text-[11px] text-slate-400 space-y-1">
-              <p>Jens Kathe • Hansastraße 6 • 34119 Kassel</p>
-              <p>E-Mail: jens@kathe.org • Tel: +49 178 6652623</p>
-              <p>Kleinunternehmer nach § 19 UStG</p>
+              <p>Unabhängiger Verbraucher-Leitfaden • Kleinunternehmer nach § 19 UStG</p>
+              <p>Vollständige Betreiberangaben siehe Impressum</p>
             </div>
           </div>
 

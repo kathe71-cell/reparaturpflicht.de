@@ -49,10 +49,10 @@ export const DutyChecker: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="badge-emerald mb-3">Interaktives Prüf-Tool</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-3">
-            Reparaturpflicht- &amp; Rechte-Prüfer
+            Recht auf Reparatur: Pflichten- &amp; Rechte-Prüfer
           </h2>
           <p className="text-slate-600 text-sm sm:text-base">
-            Wählen Sie Ihre Gerätekategorie, das Gerätealter und den Defekt aus. Unser Kompass ermittelt die gesetzlichen Pflichten des Herstellers, Ersatzteilfristen und Ihre konkreten Ansprüche.
+            Wählen Sie Ihre Gerätekategorie, das Gerätealter und den Defekt aus. Unser Kompass ermittelt Ihre gesetzlichen Ansprüche nach dem neuen <strong>Recht auf Reparatur (EU 2024/1799)</strong>, Ersatzteilfristen und Pflichten der Hersteller.
           </p>
         </div>
 

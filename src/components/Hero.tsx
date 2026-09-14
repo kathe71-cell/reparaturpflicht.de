@@ -21,27 +21,25 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.15] mb-6">
-            Das Recht auf Reparatur &amp; <br className="hidden sm:inline" />
-            <span className="text-emerald-700 underline decoration-amber-400 decoration-4 underline-offset-4">
-              Herstellerpflichten
-            </span> in Deutschland
+            Das <span className="text-emerald-700 underline decoration-amber-400 decoration-4 underline-offset-4">Recht auf Reparatur</span> &amp; <br className="hidden sm:inline" />
+            Herstellerpflichten in Deutschland
           </h1>
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
-            Was müssen Gerätehersteller bei Ersatzteilen und Reparaturanleitungen gesetzlich leisten?
-            Prüfen Sie Ihre Rechte nach EU-Recht, berechnen Sie die Ersparnis gegenüber einem Neukauf
-            und sichern Sie sich bis zu 200&nbsp;€ staatlichen Reparaturbonus.
+            Ihr unabhängiger Leitfaden zum europäischen <strong>Recht auf Reparatur (EU-Richtlinie 2024/1799)</strong>:
+            Gesetzliche Ersatzteilfristen (7–10 Jahre), Ansprüche gegen Hersteller, bis zu 200&nbsp;€ Reparaturbonus
+            und fundierter Reparatur-vs.-Neukauf-Rechner.
           </p>
 
-          {/* Position-0 Featured Snippet Definition Box (Google AI Overviews) */}
+          {/* Position-0 Featured Snippet Definition Box (Google AI Overviews & Rich Snippet) */}
           <div className="mb-8 bg-emerald-50/70 border-l-4 border-emerald-600 rounded-r-2xl p-5 sm:p-6 shadow-sm text-left">
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-950 mb-2">
               <BookmarkCheck className="w-4 h-4 text-emerald-600" />
-              <span>Auf den Punkt gebracht: Die EU-Reparaturpflicht</span>
+              <span>Auf den Punkt gebracht: Was regelt das Recht auf Reparatur?</span>
             </div>
             <p className="text-slate-950 font-bold text-sm sm:text-base leading-snug">
-              Die EU-Reparaturpflicht (Richtlinie (EU) 2024/1799) verpflichtet Hersteller von Verbrauchergeräten (u.a. Smartphones, Waschmaschinen, Tablets), Reparaturen zu angemessenen Preisen und binnen zumutbarer Fristen anzubieten. Sie garantiert einen mindestens 7- bis 10-jährigen Zugang zu Original-Ersatzteilen und Reparaturinformationen für freie Werkstätten und Verbraucher.
+              Das europäische <strong>Recht auf Reparatur</strong> (Richtlinie (EU) 2024/1799) stärkt Verbraucher und Fachbetriebe: Hersteller müssen Reparaturen zu angemessenen Preisen auch nach Ablauf der Garantie anbieten, Original-Ersatzteile für 7 bis 10 Jahre bereitstellen und Software-Sperren (Part-Pairing) gegen freie Werkstätten unterlassen.
             </p>
             <div className="mt-3 flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-600 pt-2 border-t border-emerald-200/60">
               <span className="flex items-center gap-1.5">
@@ -50,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
               </span>
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-emerald-600" />
-                Geprüfter Stand: <strong>September 2026</strong>
+                Gültigkeit: <strong>Deutschland &amp; EU</strong>
               </span>
               <span className="flex items-center gap-1.5">
                 <Award className="w-3.5 h-3.5 text-amber-700" />
@@ -66,14 +64,14 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
               className="btn-primary-amber w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-extrabold shadow-md gap-2"
             >
               <ShieldCheck className="w-5 h-5 text-slate-950" />
-              <span>Geräte-Pflichten online prüfen</span>
+              <span>Recht auf Reparatur prüfen</span>
             </button>
             <button
               onClick={() => onScrollTo('rechner')}
               className="btn-outline w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-bold gap-2 text-slate-900 bg-white"
             >
               <Calculator className="w-5 h-5 text-emerald-700" />
-              <span>Kosten- &amp; CO₂-Rechner starten</span>
+              <span>Ersparnis-Rechner starten</span>
             </button>
           </div>
 

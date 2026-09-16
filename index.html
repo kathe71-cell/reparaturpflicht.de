@@ -41,7 +41,20 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
+      "@graph": [,
+        {
+          "@type": "WebApplication",
+          "name": "Reparatur-Wirtschaftlichkeitsrechner",
+          "url": "https://reparaturpflicht.de/rechner-embed",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires JavaScript",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+          }
+        }
         {
           "@type": "WebSite",
           "@id": "https://reparaturpflicht.de/#website",

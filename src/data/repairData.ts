@@ -1,292 +1,311 @@
-import { DeviceCategory, DefectType, StateBonusProgram, RepairPartner, FaqItem } from '../types';
+import { DeviceCategory, DefectType, StateBonusProgram, FaqItem } from '../types';
 
 export const DEVICE_CATEGORIES: DeviceCategory[] = [
   {
-    id: 'smartphone',
-    name: 'Smartphones & Tablets',
-    icon: 'Smartphone',
-    badge: 'EU-Verordnung 2023/1670',
-    sparePartsYears: 7,
-    deliveryDaysMax: 10,
-    whoCanRepair: 'allgemein_zugaenglich',
-    whoCanRepairText: 'Verbraucher & freie Werkstätten (Displays, Akkus, Rückseiten)',
-    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2023/1670 & Recht auf Reparatur 2024/1799',
-    legalRegulationCode: 'VO (EU) 2023/1670',
-    warrantyExtensionMonths: 12,
-    typicalParts: ['Displayglas & OLED-Panel', 'Akku / Batteriezelle', 'Ladebuchse (USB-C)', 'Kameramodul', 'Rückseitenabdeckung'],
-    description: 'Hersteller sind verpflichtet, mindestens 7 Jahre nach Produktionsende Akkus, Displays, Kameras und Anschlüsse binnen maximal 10 Werktagen bereitzustellen. Software-Updates müssen mindestens 5 Jahre garantiert werden.'
-  },
-  {
     id: 'waschmaschine',
-    name: 'Waschmaschinen & Trockner',
+    name: 'Waschmaschinen & Waschtrockner',
+    subCategoryText: 'Haushaltswaschmaschinen nach VO (EU) 2019/2023',
     icon: 'Shirt',
-    badge: 'EU-Ökodesign 2019/2023',
+    badge: 'VO (EU) 2019/2023',
+    hasEcodesignObligation: true,
     sparePartsYears: 10,
+    sparePartsYearsText: '10 Jahre',
     deliveryDaysMax: 15,
-    whoCanRepair: 'laien_und_profis',
-    whoCanRepairText: 'Verbraucher (Tür, Dichtung, Filter) / Fachbetriebe (Motor, Heizstab)',
-    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2019/2023',
-    legalRegulationCode: 'VO (EU) 2019/2023 Anhang II',
-    warrantyExtensionMonths: 12,
-    typicalParts: ['Türscharniere & Bullaugendichtungen', 'Laugenpumpe & Flusensieb', 'Stoßdämpfer & Keilriemen', 'Heizstab & Temperatursensor', 'Elektronische Steuerplatine'],
-    description: 'Für Waschmaschinen gilt eine gesetzliche Vorhaltepflicht von 10 Jahren ab dem letzten Vertriebsdatum. Einfache Teile müssen für Endkunden zugänglich sein, sicherheitsrelevante Komponenten für unabhängige Reparaturfachbetriebe.'
+    deliveryDaysText: 'max. 15 Werktage',
+    whoCanRepair: 'getrennt_nach_bauteil',
+    whoCanRepairText: 'Verbraucher (Tür, Dichtung, Filter, Scharniere) / Fachbetriebe (Motor, Trommel, Platine)',
+    consumerParts: [
+      'Türen, Türscharniere und Türdichtungen',
+      'Andere Dichtungen und Türverriegelungsbaugruppen',
+      'Kunststoffzubehör wie Waschmittelbehälter'
+    ],
+    proParts: [
+      'Motor und Motorbürsten',
+      'Übertragung zwischen Motor und Trommel',
+      'Laugenpumpen, Stoßdämpfer und Federn',
+      'Waschtrommel, Trommellager und Heizaggregate',
+      'Steuerelektronik und Anzeige-Leiterplatten'
+    ],
+    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2019/2023 Anhang II',
+    legalRegulationCode: 'VO (EU) 2019/2023',
+    primarySourceUrl: 'https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32019R2023',
+    applicationDate: '01.03.2021',
+    startOfTimelineText: 'Ab Inverkehrbringen des letzten Exemplars des Modells',
+    description: '10 Jahre Ersatzteilbereitstellung ab Inverkehrbringen des letzten Exemplars des Modells. Einfache Komponenten für Endnutzer ohne Spezialwerkzeug, sicherheitsrelevante Bauteile für professionelle Reparateure.'
   },
   {
     id: 'geschirrspueler',
-    name: 'Geschirrspüler',
+    name: 'Haushaltsgeschirrspüler',
+    subCategoryText: 'Geschirrspüler nach VO (EU) 2019/2022',
     icon: 'Utensils',
-    badge: 'EU-Ökodesign 2019/2022',
+    badge: 'VO (EU) 2019/2022',
+    hasEcodesignObligation: true,
     sparePartsYears: 10,
+    sparePartsYearsText: '10 Jahre',
     deliveryDaysMax: 15,
-    whoCanRepair: 'laien_und_profis',
-    whoCanRepairText: 'Verbraucher (Körbe, Sprüharme, Filter) / Fachbetriebe (Umwälzpumpe)',
-    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2019/2022',
-    legalRegulationCode: 'VO (EU) 2019/2022 Anhang II',
-    warrantyExtensionMonths: 12,
-    typicalParts: ['Sprüharme & Siebkombinationen', 'Türdichtungen & Federn', 'Ablaufschlauch & Aquastop', 'Umwälzpumpe mit Heizung', 'Dosierkammer & Schalter'],
-    description: 'Hersteller müssen Ersatzteile mindestens 10 Jahre vorhalten. Die Demontage muss mit allgemein handelsüblichem Werkzeug ohne Spezialkleber möglich sein.'
+    deliveryDaysText: 'max. 15 Werktage',
+    whoCanRepair: 'getrennt_nach_bauteil',
+    whoCanRepairText: 'Verbraucher (Türscharniere, Dichtungen, Sprüharme, Filter) / Fachbetriebe (Pumpe, Heizung, Platine)',
+    consumerParts: [
+      'Türscharniere und Türdichtungen',
+      'Sprüharme, Ablauf- und Innenfilter',
+      'Geschirr- und Besteckkörbe sowie Zubehör'
+    ],
+    proParts: [
+      'Umwälzpumpe, Ablaufpumpe und Heizungselemente',
+      'Schläuche und Dichtungselemente',
+      'Schaltbretter, Displays und Steuerelektronik'
+    ],
+    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2019/2022 Anhang II',
+    legalRegulationCode: 'VO (EU) 2019/2022',
+    primarySourceUrl: 'https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32019R2022',
+    applicationDate: '01.03.2021',
+    startOfTimelineText: 'Ab Inverkehrbringen des letzten Exemplars des Modells',
+    description: 'Ersatzteilbereitstellung über 10 Jahre ab Inverkehrbringen des letzten Exemplars des Modells. Demontierbarkeit mit marktüblichem Werkzeug vorgeschrieben.'
   },
   {
     id: 'kuehlgeraet',
-    name: 'Kühlschränke & Gefriergeräte',
+    name: 'Kühl- & Gefriergeräte',
+    subCategoryText: 'Kühlgeräte nach VO (EU) 2019/2019',
     icon: 'Snowflake',
-    badge: 'EU-Ökodesign 2019/2019',
+    badge: 'VO (EU) 2019/2019',
+    hasEcodesignObligation: true,
     sparePartsYears: 10,
+    sparePartsYearsText: 'Türdichtungen: min. 10 J. / Sonstige Teile (Thermostate, Platinen, Griffe, Scharniere, Ablagen): min. 7 J.',
     deliveryDaysMax: 15,
-    whoCanRepair: 'laien_und_profis',
-    whoCanRepairText: 'Verbraucher (Griffe, Schalen, Dichtungen) / Profis (Thermostat, Kompressor)',
-    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2019/2019',
-    legalRegulationCode: 'VO (EU) 2019/2019 Anhang II',
-    warrantyExtensionMonths: 12,
-    typicalParts: ['Türdichtungen & Türgriffe', 'Glasplatten, Schubladen & Scharniere', 'Thermostate & Temperatursensoren', 'LED-Innenbeleuchtung', 'Kompressor-Steuerelektronik'],
-    description: 'Dichtungen und Griffe müssen für Endnutzer ohne Spezialwerkzeug austauschbar sein. Gesetzliche Ersatzteilpflicht beträgt 7 bis 10 Jahre nach Inverkehrbringen.'
+    deliveryDaysText: 'max. 15 Werktage',
+    whoCanRepair: 'getrennt_nach_bauteil',
+    whoCanRepairText: 'Türdichtungen (min. 10 Jahre, Verbraucher) / Türgriffe, Scharniere, Schalen (min. 7 Jahre, Verbraucher) / Thermostate, Sensoren, Platinen (min. 7 Jahre, Fachbetriebe)',
+    consumerParts: [
+      'Türdichtungen (mindestens 10 Jahre verfügbar)',
+      'Türgriffe, Türscharniere, Schalen, Körbe und Einschübe (mindestens 7 Jahre verfügbar)'
+    ],
+    proParts: [
+      'Thermostate, Temperatursensoren und Leiterplatten (mindestens 7 Jahre verfügbar)',
+      'Lichtquellen, Kompressoren und Kältekreislauf-Komponenten (mindestens 7 Jahre verfügbar)'
+    ],
+    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2019/2019 Anhang II',
+    legalRegulationCode: 'VO (EU) 2019/2019',
+    primarySourceUrl: 'https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32019R2019',
+    applicationDate: '01.03.2021',
+    startOfTimelineText: 'Ab Inverkehrbringen des letzten Exemplars des Modells',
+    description: 'VO (EU) 2019/2019 Anhang II: Türdichtungen mindestens 10 Jahre verfügbar; Thermostate, Temperatursensoren, Platinen, Lichtquellen, Türgriffe, Scharniere und Ablagen mindestens 7 Jahre ab Inverkehrbringen des letzten Exemplars des Modells.'
+  },
+  {
+    id: 'trockner',
+    name: 'Haushalts-Wäschetrockner',
+    subCategoryText: 'Wäschetrockner nach VO (EU) 2023/2533',
+    icon: 'Wind',
+    badge: 'VO (EU) 2023/2533',
+    hasEcodesignObligation: true,
+    sparePartsYears: 10,
+    sparePartsYearsText: '10 Jahre (ab 01.07.2025)',
+    deliveryDaysMax: 15,
+    deliveryDaysText: 'max. 15 Werktage',
+    whoCanRepair: 'getrennt_nach_bauteil',
+    whoCanRepairText: 'Verbraucher (Tür, Filter, Scharniere) / Fachbetriebe (Wärmepumpe, Motor, Trommel)',
+    consumerParts: [
+      'Türen, Türdichtungen und Türscharniere',
+      'Flusensiebe, Kondensatbehälter und Abdeckungen'
+    ],
+    proParts: [
+      'Wärmepumpenaggregate, Gebläsemotoren',
+      'Trommel und Trommellagerung',
+      'Steuerelektronik und Sensoren'
+    ],
+    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2023/2533',
+    legalRegulationCode: 'VO (EU) 2023/2533',
+    primarySourceUrl: 'https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32023R2533',
+    applicationDate: '01.07.2025',
+    startOfTimelineText: 'Gilt ab 1. Juli 2025 für neu in Verkehr gebrachte Wäschetrockner',
+    description: 'Spezifische Ökodesign-Verordnung gilt ab 1. Juli 2025 mit 10-jähriger Ersatzteilpflicht ab Inverkehrbringen des letzten Exemplars des Modells.'
   },
   {
     id: 'tv_monitor',
-    name: 'Fernseher & Displays',
+    name: 'Fernseher & elektronische Displays',
+    subCategoryText: 'Displays & TVs nach VO (EU) 2019/2021',
     icon: 'Tv',
-    badge: 'EU-Ökodesign 2019/2021',
+    badge: 'VO (EU) 2019/2021',
+    hasEcodesignObligation: true,
     sparePartsYears: 7,
+    sparePartsYearsText: '7 Jahre',
     deliveryDaysMax: 15,
-    whoCanRepair: 'laien_und_profis',
-    whoCanRepairText: 'Verbraucher (Kabel, Netzteile, Fernbedienung) / Profis (Mainboard, LED-Backlight)',
-    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2019/2021',
-    legalRegulationCode: 'VO (EU) 2019/2021 Anhang II',
-    warrantyExtensionMonths: 12,
-    typicalParts: ['Externe Netzteile & Stromkabel', 'Fernbedienungen & Standfüße', 'Mainboard & Netzteil-Platine', 'LED-Hintergrundbeleuchtung (Backlight)', 'T-Con Board'],
-    description: 'Ersatzteile müssen für mindestens 7 Jahre verfügbar gehalten werden. Der Zugang zu Reparaturanleitungen muss für Fachbetriebe diskriminierungsfrei gewährleistet sein.'
+    deliveryDaysText: 'max. 15 Werktage',
+    whoCanRepair: 'getrennt_nach_bauteil',
+    whoCanRepairText: 'Verbraucher (Externe Netzteile, Fernbedienung, Standfuß) / Fachbetriebe (Mainboard, Backlight)',
+    consumerParts: [
+      'Externe Netzteile und externe Kabel',
+      'Fernbedienungen, Standfüße und Halterungen'
+    ],
+    proParts: [
+      'Interne Netzteile und Stromversorgungsplatinen',
+      'Mainboards, T-Con-Boards und Signalprozessoren',
+      'LED-Hintergrundbeleuchtung (Backlight-Stripes)'
+    ],
+    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2019/2021 Anhang II',
+    legalRegulationCode: 'VO (EU) 2019/2021',
+    primarySourceUrl: 'https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32019R2021',
+    applicationDate: '01.03.2021',
+    startOfTimelineText: 'Ab Inverkehrbringen des letzten Exemplars des Modells',
+    description: '7 Jahre Ersatzteilvorhaltung ab Inverkehrbringen des letzten Exemplars des Modells.'
   },
   {
-    id: 'staubsauger',
-    name: 'Staubsauger & Saugroboter',
-    icon: 'Wind',
-    badge: 'EU-Ökodesign & ESPR',
+    id: 'smartphone',
+    name: 'Smartphones & Tablets',
+    subCategoryText: 'Smartphones & Tablets nach VO (EU) 2023/1670',
+    icon: 'Smartphone',
+    badge: 'Gilt ab 20.06.2025',
+    hasEcodesignObligation: true,
     sparePartsYears: 7,
+    sparePartsYearsText: '7 Jahre (ab 20.06.2025)',
     deliveryDaysMax: 10,
-    whoCanRepair: 'allgemein_zugaenglich',
-    whoCanRepairText: 'Verbraucher & freie Werkstätten (Schläuche, Bürstenwalzen, Akkus)',
-    legalFramework: 'EU-Ökodesign-Verordnung & ESPR Rahmenverordnung',
-    legalRegulationCode: 'ESPR / Ökodesign',
-    warrantyExtensionMonths: 12,
-    typicalParts: ['Akku & Ladestation', 'Saugschlauch & Teleskoprohr', 'Bürstenwalzen & Bodendüsen', 'Filterkassetten & Motorschutzfilter', 'Saugmotor & Schalter'],
-    description: 'Verschleißteile und Batterien müssen leicht zugänglich und austauschbar sein. Hersteller müssen Ersatzteile mindestens 7 Jahre ab Inverkehrbringen vorhalten.'
+    deliveryDaysText: '5 Werktage (Jahre 1–5) / 10 Werktage (Jahre 6–7)',
+    whoCanRepair: 'laien_und_profis',
+    whoCanRepairText: 'Endnutzer & freie Werkstätten (Lieferfrist: 5 Werktage in den ersten 5 Jahren, 10 Werktage in den Jahren 6–7 der Verfügbarkeitsperiode)',
+    consumerParts: [
+      'Batterien / Akkus (7 Jahre verfügbar)',
+      'Display-Baugruppen (7 Jahre verfügbar)',
+      'Kameramodule (Front & Rückseite, 7 Jahre verfügbar)',
+      'Ladebuchsen USB-C (7 Jahre verfügbar)',
+      'Mechanische Tasten, Mikrofone & Lautsprecher (7 Jahre verfügbar)'
+    ],
+    proParts: [
+      'Hauptplatinen / SoCs (modellabhängig)'
+    ],
+    legalFramework: 'EU-Ökodesign-Verordnung (EU) 2023/1670 Anhang II',
+    legalRegulationCode: 'VO (EU) 2023/1670',
+    primarySourceUrl: 'https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32023R1670',
+    applicationDate: '20.06.2025',
+    startOfTimelineText: 'Gilt ab 20. Juni 2025 für neu in Verkehr gebrachte Smartphones/Tablets',
+    description: 'VO (EU) 2023/1670 Anhang II: 7 Jahre Ersatzteilverfügbarkeit ab Inverkehrbringen des letzten Exemplars des Modells. Lieferfrist: 5 Werktage in den ersten 5 Jahren nach Ende des Inverkehrbringens, 10 Werktage in den verbleibenden 2 Jahren (Jahre 6–7).'
   },
   {
     id: 'laptop_it',
-    name: 'Notebooks & Desktop-PCs',
+    name: 'Laptops & Desktop-PCs',
+    subCategoryText: 'Computer nach VO (EU) 617/2013 (Nur Energieeffizienz)',
     icon: 'Laptop',
-    badge: 'EU ESPR / ESP-Regelung',
-    sparePartsYears: 7,
-    deliveryDaysMax: 10,
-    whoCanRepair: 'allgemein_zugaenglich',
-    whoCanRepairText: 'Verbraucher & IT-Werkstätten (SSD, RAM, Akku, Tastatur)',
-    legalFramework: 'EU-Ökodesign für Computer & EU-Richtlinie 2024/1799',
-    legalRegulationCode: 'VO (EU) 617/2013 & RL 2024/1799',
-    warrantyExtensionMonths: 12,
-    typicalParts: ['Akku / Lithium-Ionen-Batterie', 'SSD-Speicher & RAM-Module', 'Tastatur & Trackpad', 'Ladeanschluss & Display-Scharniere', 'Kühlerlüfter & Wärmeleitpaste'],
-    description: 'Module wie Arbeitsspeicher, Massenspeicher und Akkus dürfen herstellerseitig nicht unlösbar verklebt sein, sofern der Standard dies technisch erlaubt.'
+    badge: 'Keine Ökodesign-Ersatzteilpflicht',
+    hasEcodesignObligation: false,
+    sparePartsYears: 0,
+    sparePartsYearsText: 'Keine gesetzliche Pflicht',
+    deliveryDaysMax: 0,
+    deliveryDaysText: '—',
+    whoCanRepair: 'keine_spezifische_pflicht',
+    whoCanRepairText: 'Keine gesetzliche Vorhaltepflicht für Ersatzteile bei Computern nach Ökodesign-Recht',
+    consumerParts: [
+      'Freiwillige Angebote der Hersteller oder Dritthersteller (z. B. RAM, SSD, Akku)'
+    ],
+    proParts: [
+      'Herstellerspezifische Platinen & Grafikchips'
+    ],
+    legalFramework: 'VO (EU) 617/2013 (Energieeffizienz) – Keine Ökodesign-Ersatzteilpflicht',
+    legalRegulationCode: 'VO (EU) 617/2013',
+    primarySourceUrl: 'https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32013R0617',
+    applicationDate: 'Geltendes Recht (Keine Ersatzteilauflage)',
+    startOfTimelineText: 'Kein gesetzlicher Stichtag für Ersatzteilbevorratung',
+    description: 'Für Notebooks und PCs gelten EU-Energieeffizienzregeln, aber derzeit KEINE gesetzliche Ökodesign-Ersatzteilpflicht wie bei Haushaltsgroßgeräten. Verfügbarkeit hängt vom Hersteller ab.'
   }
 ];
 
 export const DEFECT_TYPES: DefectType[] = [
   {
-    id: 'akku',
-    name: 'Akku / Batterieverschleiß',
-    description: 'Verringerte Kapazität, schnelles Entladen oder Aufblähen der Zelle.',
-    typicalCostRatio: 0.18,
-    co2SavingsEstimateKg: 42
+    id: 'displaybreak',
+    name: 'Sturzschaden / Displaybruch (Eigenverschulden)',
+    description: 'Äußere Krafteinwirkung, Risse im Glas oder OLED durch Unfall/Sturz.',
+    isUsuallySelfInflicted: true
   },
   {
-    id: 'display',
-    name: 'Displaybruch / Glasdefekt / Bildfehler',
-    description: 'Risse im Frontglas, Pixelfehler, Streifenbildung oder Berührungsunempfindlichkeit.',
-    typicalCostRatio: 0.28,
-    co2SavingsEstimateKg: 58
+    id: 'akku',
+    name: 'Akku-Verschleiß / Kapazitätsverlust',
+    description: 'Verringerte Laufzeit nach längerer Nutzung (normaler Altersverschleiß).',
+    isUsuallySelfInflicted: false
   },
   {
     id: 'elektronik',
-    name: 'Elektronik / Steuerplatine / Sensorik',
-    description: 'Fehlercodes, Gerät schaltet sich spontan ab, keine Reaktion auf Tastendruck.',
-    typicalCostRatio: 0.25,
-    co2SavingsEstimateKg: 85
+    name: 'Elektronik- / Platinendefekt ohne Äußere Einwirkung',
+    description: 'Gerät schaltet spontan ab oder zeigt Fehlercode (Mangelursache unklar).',
+    isUsuallySelfInflicted: false
   },
   {
     id: 'mechanik',
-    name: 'Mechanik / Motor / Pumpe / Getriebe',
-    description: 'Ungewöhnliche Schleif- oder Quietschgeräusche, Wasser wird nicht abgepumpt, Motor dreht nicht.',
-    typicalCostRatio: 0.22,
-    co2SavingsEstimateKg: 110
-  },
-  {
-    id: 'verschleiss',
-    name: 'Dichtung / Schlauch / Scharnier / Verschleiß',
-    description: 'Leckagen, poröse Gummilippen, abgebrochene Halterungen oder Scharniere.',
-    typicalCostRatio: 0.10,
-    co2SavingsEstimateKg: 95
-  },
-  {
-    id: 'software',
-    name: 'Software / Firmware / Boot-Schleife',
-    description: 'Gerät hängt beim Startvorgang, Update fehlgeschlagen, Verbindungsprobleme.',
-    typicalCostRatio: 0.12,
-    co2SavingsEstimateKg: 35
+    name: 'Pumpe / Motor / Mechanischer Defekt',
+    description: 'Blockade oder Defekt mechanischer Bauteile ohne äußeres Verschulden.',
+    isUsuallySelfInflicted: false
   }
 ];
 
 export const STATE_BONUS_PROGRAMS: StateBonusProgram[] = [
   {
-    state: 'Thüringen',
-    status: 'aktiv',
-    statusBadge: 'Regulär aktiv',
-    maxAmountEur: 100,
-    costCoveragePct: 50,
-    minInvoiceEur: 50,
-    officialBody: 'Thüringer Ministerium für Umwelt, Energie und Naturschutz (TMUEN)',
-    description: 'Erstattung von 50 % der Reparaturrechnung (max. 100 € pro Person/Jahr; bei Selbstreparatur mit Ersatzteilkauf bis zu 100 € reine Materialkosten).',
-    conditions: [
-      'Hauptwohnsitz in Thüringen',
-      'Mindestalter 18 Jahre',
-      'Rechnung einer Fachwerkstatt oder Ersatzteil-Rechnung',
-      'Reparatur eines haushaltsüblichen Elektrogeräts'
-    ]
-  },
-  {
+    id: 'sachsen',
     state: 'Sachsen',
     status: 'aktiv',
-    statusBadge: 'Regulär aktiv',
+    statusBadge: 'Aktiv (SAB Förderportal)',
     maxAmountEur: 200,
     costCoveragePct: 50,
-    minInvoiceEur: 50,
+    minInvoiceEur: 115,
+    maxRepairsPerYear: 2,
     officialBody: 'Sächsische Aufbaubank (SAB)',
-    description: 'Gefördert werden 50 % der zuwendungsfähigen Reparaturkosten bis zu 200 € pro Kalenderjahr. Der Antrag erfolgt digital über das Förderportal der SAB.',
+    officialUrl: 'https://www.sab.sachsen.de/reparaturbonus',
+    auditDate: '17. September 2026',
+    description: 'Gefördert werden 50 % der förderfähigen Reparaturkosten bis max. 200 € pro Reparatur. Mindestrechnungsbetrag 115 € brutto bei einem im SAB-Portal registrierten Fachunternehmen. Max. 2 Reparaturen pro Person und Kalenderjahr.',
     conditions: [
       'Hauptwohnsitz im Freistaat Sachsen',
-      'Mindestrechnungsbetrag 50 Euro brutto',
-      'Reparatur durch ein im SAB-Verzeichnis registriertes Fachunternehmen',
-      'Maximal 2 Reparaturen pro Person und Kalenderjahr'
+      'Mindestrechnungsbetrag 115 Euro brutto',
+      'Reparatur durch ein im SAB-Förderportal gelistetes Fachunternehmen',
+      'Maximal 2 Anträge pro Person und Kalenderjahr'
     ]
   },
   {
+    id: 'berlin',
     state: 'Berlin',
-    status: 'aktiv',
-    statusBadge: 'Aktiv / Tranchenverfahren',
+    status: 'gestoppt_budget_erschoepft',
+    statusBadge: 'Antragsstopp / Budget erschöpft',
     maxAmountEur: 200,
     costCoveragePct: 50,
     minInvoiceEur: 75,
     officialBody: 'IBB Business Team GmbH (Senatsverwaltung Berlin)',
-    description: 'Bis zu 50 % Zuschuss zu Reparaturkosten (max. 200 €). Für Selbstreparaturen in Berliner Repair-Cafés wird der Ersatzteilkauf mit bis zu 200 € gefördert.',
+    officialUrl: 'https://www.ibb-businessteam.de/reparaturbonus/',
+    auditDate: '17. September 2026',
+    description: 'Aktuell Antragsstopp: Das Budget der aktuellen Tranche ist aufgebraucht. Neue Anträge können derzeit nicht eingereicht werden.',
     conditions: [
       'Erstwohnsitz im Land Berlin',
-      'Reparatur durch gewerblichen Reparaturbetrieb oder Repair-Café',
-      'Rechnungsstellung innerhalb der Förderperiode',
-      'Privat genutztes Elektro- und Elektronikgerät'
+      'Aktuell Antragsstopp wegen vorübergehender Budgeterschöpfung',
+      'Prüfdatum: September 2026'
     ]
   },
   {
-    state: 'Bundesweites Förderprogramm (Deutschland)',
-    status: 'in_planung',
-    statusBadge: 'In gesetzlicher Ausarbeitung',
-    maxAmountEur: 200,
+    id: 'thueringen',
+    state: 'Thüringen',
+    status: 'beendet',
+    statusBadge: 'Programm beendet',
+    maxAmountEur: 100,
     costCoveragePct: 50,
     minInvoiceEur: 50,
-    officialBody: 'Bundesumweltministerium (BMUV) / Nationale Kreislaufwirtschaftsstrategie',
-    description: 'Im Rahmen des Bundes-Aktionsprogramms für Reparierbarkeit und der nationalen Kreislaufwirtschaftsstrategie (NKWS) ist ein einheitlicher Bundes-Reparaturbonus nach Vorbild Thüringens und Österreichs in Vorbereitung.',
+    officialBody: 'Thüringer Ministerium für Umwelt, Energie und Naturschutz (TMUEN)',
+    officialUrl: 'https://umwelt.thueringen.de/',
+    auditDate: '17. September 2026',
+    description: 'Das Thüringer Förderprogramm ist nach Auslauf der Haushaltsmittel beendet. Es können keine neuen Anträge gestellt werden.',
     conditions: [
-      'Bundesweit einheitliche Förderrichtlinie geplant',
-      'Verknüpfung mit der EU-Reparaturplattform',
-      'Geltung für registrierte Betriebe und qualifizierte Selbstreparatur'
+      'Förderprogramm aktuell eingestellt',
+      'Keine Antragstellung mehr möglich (Stand September 2026)'
     ]
-  }
-];
-
-export const REPAIR_PARTNERS: RepairPartner[] = [
-  {
-    id: 'ersatzteile-direkt',
-    title: 'Original-Ersatzteile & Zubehör',
-    category: 'ersatzteile',
-    categoryLabel: 'Ersatzteil-Versand',
-    partnerName: 'ErsatzteilDirect Portal',
-    headline: 'Über 2 Mio. verifizierte Ersatzteile für Haushaltsgeräte & Elektronik',
-    description: 'Spezialisierter Anbieter für originale und kompatible Ersatzteile führender Marken (Bosch, Siemens, Miele, Samsung, AEG, Bauknecht). Schneller Versand direkt aus Zentrallagern in Deutschland.',
-    highlights: [
-      'Teilesuche nach Gerätenummer (E-Nr. / Typenschild)',
-      '14 Tage Rückgaberecht & Passgenauigkeits-Prüfung',
-      'Schnellversand innerhalb 24-48 Stunden'
-    ],
-    ctaText: 'Passendes Ersatzteil finden *',
-    partnerUrl: 'https://reparaturpflicht.de/go/ersatzteile',
-    verifiedLabel: 'Führender Fachversand'
   },
   {
-    id: 'diy-anleitungen',
-    title: 'Schritt-für-Schritt Reparaturanleitungen & Werkzeuge',
-    category: 'diy_anleitung',
-    categoryLabel: 'DIY & Werkzeug',
-    partnerName: 'Reparatur-Handbuch & Präzisionswerkzeug',
-    headline: 'Kostenlose Demontage-Leitfäden, Video-Tutorials & Spezialbits',
-    description: 'Umfassende, redaktionell geprüfte Reparatur-Leitfäden für Smartphones, Laptops und Kleingeräte. Modulare Werkzeug-Sets mit rutschfesten Schraubendrehern und Hebelwerkzeugen für schonendes Öffnen.',
-    highlights: [
-      'Über 80.000 bebilderte Schritt-für-Schritt-Anleitungen',
-      'Praktische Einstufung des Schwierigkeitsgrads & Zeitbedarfs',
-      'Magnetische Schraubenmatten gegen Verlust kleiner Bauteile'
-    ],
-    ctaText: 'Reparaturanleitung abrufen *',
-    partnerUrl: 'https://reparaturpflicht.de/go/anleitungen',
-    verifiedLabel: 'Open Source Know-how'
-  },
-  {
-    id: 'fachwerkstatt-netzwerk',
-    title: 'Zertifizierte Meisterbetriebe & freie Werkstätten',
-    category: 'werkstatt',
-    categoryLabel: 'Vor-Ort-Service',
-    partnerName: 'Deutsches Reparatur-Fachnetzwerk',
-    headline: 'Qualifizierte Techniker für Waschmaschinen, Spülmaschinen & Fernseher',
-    description: 'Bundesweites Verzeichnis von Handwerksmeistern und autorisierten Reparatur-Dienstleistern. Kostenvoranschlag vor Reparaturbeginn und 12 Monate Garantie auf ausgeführte Reparaturarbeiten.',
-    highlights: [
-      'Transparente Anfahrts- und Diagnosepauschalen',
-      'Fachgerechte Entsorgung von Altteilen nach ElektroG',
-      'Erfüllt Bedingungen für den staatlichen Reparaturbonus'
-    ],
-    ctaText: 'Werkstatt in der Nähe anfragen *',
-    partnerUrl: 'https://reparaturpflicht.de/go/werkstatt-finder',
-    verifiedLabel: 'Meisterbetrieb-Netzwerk'
-  },
-  {
-    id: 'geraeteschutz-reparatur',
-    title: 'Reparaturkosten-Schutz & Langzeit-Garantie',
-    category: 'versicherung',
-    categoryLabel: 'Reparaturschutz',
-    partnerName: 'Geräteschutzbrief Premium',
-    headline: 'Schutz vor Reparaturkosten bei Verschleiß, Elektronik- & Sturzschäden',
-    description: 'Absicherung von Neu- und Gebrauchtgeräten gegen unvorhergesehene Reparaturkosten. Übernahme von Material- und Arbeitskosten auch nach Ablauf der 2-jährigen Händlergewährleistung.',
-    highlights: [
-      'Übernahme von 100 % der Reparaturkosten bei versicherten Schäden',
-      'Deckung auch bei Akku-Verschleiß und Feuchtigkeitsschäden',
-      'Monatlich kündbare Tarife ohne lange Mindestlaufzeiten'
-    ],
-    ctaText: 'Reparaturschutz vergleichen *',
-    partnerUrl: 'https://reparaturpflicht.de/go/reparaturschutz',
-    verifiedLabel: 'TÜV-geprüfter Service'
+    id: 'bundesweit',
+    state: 'Bundesweit (Deutschland)',
+    status: 'kein_programm',
+    statusBadge: 'Kein bundesweites Gesetz',
+    maxAmountEur: 0,
+    costCoveragePct: 0,
+    minInvoiceEur: 0,
+    officialBody: 'Bundesministerium für Umwelt / Verbraucherschutz (BMUV)',
+    officialUrl: 'https://www.bmuv.de/',
+    auditDate: '17. September 2026',
+    description: 'Ein bundesweiter Reparaturbonus existiert in Deutschland derzeit nicht. Zuschüsse beschränken sich auf Bundesländer mit eigenen Förderrichtlinien.',
+    conditions: [
+      'Keine bundesweit einheitliche Förderprämie',
+      'Gewährung abhängig vom jeweiligen Wohnsitz-Bundesland'
+    ]
   }
 ];
 
@@ -294,49 +313,36 @@ export const FAQS: FaqItem[] = [
   {
     id: 'faq-1',
     category: 'recht',
-    question: 'Was besagt das Recht auf Reparatur (EU-Richtlinie 2024/1799) genau?',
-    answer: 'Die EU-Richtlinie 2024/1799 (Recht auf Reparatur) stärkt Verbraucher und Fachbetriebe durch vier zentrale Pfeiler: 1. Hersteller müssen auch nach Ablauf der 2-jährigen Gewährleistung Reparaturen zu angemessenen Preisen und Fristen anbieten. 2. Entscheidet sich ein Verbraucher innerhalb der Gewährleistung für eine Reparatur statt für ein Ersatzgerät, verlängert sich die Sachmängelhaftung um zusätzliche 12 Monate. 3. Software-Sperren ("Part-Pairing") und vertragliche Hürden gegen freie Werkstätten und gebrauchte Ersatzteile werden untersagt. 4. Ein europäisches standardisiertes Reparatur-Informationsformular sorgt für transparente Kostenvoranschläge.'
+    question: 'Welche juristische Unterscheidung besteht zwischen Gewährleistung und Ersatzteilpflicht?',
+    answer: 'Die gesetzliche Gewährleistung (Sachmängelhaftung nach § 437 BGB) richtet sich ausschließlich gegen den Verkäufer (Händler) und gilt 2 Jahre ab Übergabe der Ware. Sie greift nur bei Mängeln, die bereits bei Gefahrübergang vorlagen (nicht bei Unfall oder Sturz). Die herstellerseitige Ersatzteilbereitstellung (EU-Ökodesign) verpflichtet hingegen den Hersteller/Importeur, Ersatzteile über 7 bis 10 Jahre vorzuhalten – unabhängig davon, wer die Reparatur auf eigene Kosten durchführt.',
+    citation: 'BGB § 437, § 438, § 477 vs. EU-Ökodesign-Verordnungen'
   },
   {
     id: 'faq-2',
     category: 'recht',
-    question: 'Ab wann gilt das europäische Recht auf Reparatur in Deutschland?',
-    answer: 'Die EU-Richtlinie 2024/1799 ist Mitte 2024 in Kraft getreten. Die Bundesrepublik Deutschland und alle anderen EU-Staaten setzen die Richtlinie bis spätestens Sommer 2026 verbindlich in nationales Recht (insbesondere deutsches Kaufrecht und BGB) um. Wichtig für Verbraucher: Zahlreiche produktspezifische Ökodesign-Vorgaben für Ersatzteile (z. B. für Smartphones, Tablets, Waschmaschinen und Kühlschränke) gelten bereits jetzt unmittelbar.'
+    question: 'Sind Sturzschäden oder selbst verursachte Displaybrüche über die Gewährleistung abgedeckt?',
+    answer: 'Nein. Mängel, die durch unsachgemäße Behandlung, Sturz, Feuchtigkeit oder Unfälle nach dem Kauf entstehen, stellen keinen Sachmangel im Sinne des § 434 BGB dar. Der Verkäufer haftet hierfür nicht. Verbraucher können solche Schäden nur auf eigene Kosten reparieren lassen oder über eine freiwillige Garantie/Versicherung abwickeln.',
+    citation: 'BGB § 434 Abs. 1'
   },
   {
     id: 'faq-3',
     category: 'hersteller',
-    question: 'Welche Geräte fallen unter das Recht auf Reparatur?',
-    answer: 'Unter das Recht auf Reparatur fallen zunächst alle Produktgruppen mit bestehenden EU-Ökodesign-Reparaturvorgaben: Smartphones, Mobiltelefone, Tablets, Waschmaschinen, Haushalts-Wäschetrockner, Geschirrspüler, Kühlschränke und Gefriergeräte, Fernseher und elektronische Displays, Schweißgeräte sowie Staubsauger. Die EU-Kommission erweitert den Kreis der erfassten Elektrogeräte im Rahmen der Ökodesign-Rahmenverordnung (ESPR) kontinuierlich.'
+    question: 'Gilt das EU-Recht auf Reparatur (RL 2024/1799) für Verträge vor dem 31.07.2026?',
+    answer: 'Die EU-Richtlinie 2024/1799 gewährt den Mitgliedstaaten eine Übergangsfrist zur nationalen Umsetzung bis zum 31. Juli 2026. Neue Ansprüche (wie der Anspruch auf herstellerseitige Reparatur nach Garantieablauf oder die 12-monatige Gewährleistungsverlängerung nach Reparatur) finden primär auf Kaufverträge und Reparaturverlangen nach dem nationalen Inkrafttreten Anwendung.',
+    citation: 'Richtlinie (EU) 2024/1799 Art. 18 & 19'
   },
   {
     id: 'faq-4',
-    category: 'recht',
-    question: 'Haben Verbraucher in Deutschland eine rechtliche Pflicht zur Reparatur?',
-    answer: 'Nein. Für Privatpersonen existiert in Deutschland kein Reparaturzwang. Wenn Ihr Gerät defekt ist, können Sie frei entscheiden, ob Sie es reparieren lassen, als Teilespender abgeben oder fachgerecht über den Wertstoffhof bzw. den Handel nach ElektroG entsorgen. Der Begriff "Reparaturpflicht" bezieht sich im juristischen Sinne auf Pflichten der Hersteller und Händler (z. B. Bevorratung von Ersatzteilen, Bereitstellung von Demontageanleitungen und Vorrang der Nacherfüllung im BGB-Kaufrecht).'
+    category: 'hersteller',
+    question: 'Gibt es für Laptops, Desktop-PCs oder Saugroboter eine gesetzliche Ersatzteilpflicht?',
+    answer: 'Für Laptops und Desktop-PCs gelten derzeit EU-Energieeffizienzregeln (VO 617/2013), aber bisher KEINE verbindliche Ökodesign-Ersatzteilvorhaltepflicht wie bei Haushaltsgroßgeräten. Ebenso sind Saugroboter noch nicht von einer spezifischen 7- bis 10-jährigen Ersatzteil-Lieferpflicht abgedeckt.',
+    citation: 'VO (EU) 617/2013 & EU-Ökodesign-Arbeitsprogramm'
   },
   {
     id: 'faq-5',
-    category: 'hersteller',
-    question: 'Wie lange müssen Hersteller gesetzlich Ersatzteile vorhalten?',
-    answer: 'Die Frist richtet sich nach der Ökodesign-Verordnung des jeweiligen Gerätetyps: Für Haushaltsgroßgeräte (Waschmaschinen, Geschirrspüler, Kühlgeräte) beträgt die Pflicht 7 bis 10 Jahre ab Produktionsstopp des Modells. Für Smartphones und Tablets gilt eine verbindliche Vorhaltefrist von 7 Jahren für Akkus, Displays und Kameras. Zudem dürfen Ersatzteile maximal 10 bis 15 Arbeitstage Lieferzeit in Anspruch nehmen.'
-  },
-  {
-    id: 'faq-6',
-    category: 'hersteller',
-    question: 'Dürfen Hersteller Reparaturen durch freie Werkstätten oder Selbstreparatur blockieren?',
-    answer: 'Nein. Die EU-Gesetzgebung untersagt Herstellern explizit jegliche Behinderung durch Software, Hardware oder Vertragsklauseln. Sogenanntes "Part-Pairing" (Serialisierung von Ersatzteilen), bei dem ein neues Bauteil ohne teure Hersteller-Freischaltung Fehlermeldungen erzeugt oder Funktionen abschaltet, ist nach den neuen Vorgaben unzulässig.'
-  },
-  {
-    id: 'faq-7',
     category: 'bonus',
-    question: 'Wie funktioniert der staatliche Reparaturbonus (bis zu 200 €)?',
-    answer: 'Der Reparaturbonus erstattet Bürgern in teilnehmenden Bundesländern (z. B. Thüringen, Sachsen, Berlin) in der Regel 50 % der belegten Reparaturkosten bis zu 100 bzw. 200 Euro pro Kalenderjahr. In vielen Programmen werden auch die reinen Materialkosten für Selbstreparaturen (z. B. in Repair-Cafés) gefördert. Die Beantragung erfolgt einfach digital mit Hochladen der Werkstatt- oder Ersatzteilrechnung.'
-  },
-  {
-    id: 'faq-8',
-    category: 'kosten',
-    question: 'Wann lohnt sich eine Reparatur im Vergleich zum Neukauf wirtschaftlich?',
-    answer: 'Als Faustregel gilt: Liegen die Reparaturkosten unter 35 bis 40 % des Neupreises eines gleichwertigen Ersatzgeräts, lohnt sich die Instandsetzung wirtschaftlich fast immer. Zudem sinken die tatsächlichen Kosten pro Nutzungsjahr (TCO): Bei einer 140-€-Reparatur, die das Gerät 3 weitere Jahre sichert, zahlen Sie rechnerisch nur rund 47 € pro weiterem Nutzungsjahr – weit weniger als der Wertverlust eines neuen Geräts.'
+    question: 'Wo ist der Reparaturbonus aktuell in Deutschland aktiv?',
+    answer: 'Aktuell ist ein Reparaturbonus nur im Freistaat Sachsen über die Sächsische Aufbaubank (SAB) aktiv (Mindestrechnung 115 € brutto bei einem registrierten Fachunternehmen, 50 % Erstattung bis max. 200 €). In Thüringen ist das Programm beendet; in Berlin gilt wegen Budgeterschöpfung ein Antragsstopp. Ein bundesweiter Bonus existiert nicht.',
+    citation: 'SAB Förderrichtlinie Reparaturbonus Sachsen 2026'
   }
 ];

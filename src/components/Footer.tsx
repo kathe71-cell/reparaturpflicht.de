@@ -6,6 +6,17 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const handleAnchorClick = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault();
+    onNavigate('home');
+    setTimeout(() => {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
+  };
+
   return (
     <footer className="bg-slate-950 text-slate-300 border-t border-slate-800 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,10 +32,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Unabhängiger Verbraucher-Leitfaden zum europäischen Recht auf Reparatur (EU-Richtlinie 2024/1799) und deutschen Ökodesign-Vorgaben. Für längere Gerätenutzung, weniger Elektroschrott und echte Kostenersparnis.
+              Unabhängiges Informationsportal zum europäischen Recht auf Reparatur (EU-Richtlinie 2024/1799) und deutschen Ökodesign-Vorgaben. Für längere Gerätenutzung und nachvollziehbare Verbraucherrechte.
             </p>
             <div className="pt-2 text-[11px] text-slate-400 space-y-1">
-              <p>Unabhängiger Verbraucher-Leitfaden • Kleinunternehmer nach § 19 UStG</p>
+              <p>Redaktioneller Leitfaden • Kleinunternehmer nach § 19 UStG</p>
               <p>Vollständige Betreiberangaben siehe Impressum</p>
             </div>
           </div>
@@ -36,32 +47,56 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </h4>
             <ul className="space-y-2 text-xs text-slate-400 font-medium">
               <li>
-                <a href="#pflichten-check" className="hover:text-emerald-400 transition-colors">
-                  Pflichten-Prüfer
+                <a
+                  href="/#pflichten-check"
+                  onClick={(e) => handleAnchorClick(e, 'pflichten-check')}
+                  className="hover:text-emerald-400 transition-colors"
+                >
+                  Rechte- &amp; Pflichten-Prüfer
                 </a>
               </li>
               <li>
-                <a href="#rechner" className="hover:text-emerald-400 transition-colors">
-                  Kosten- &amp; CO₂-Rechner
+                <a
+                  href="/#rechner"
+                  onClick={(e) => handleAnchorClick(e, 'rechner')}
+                  className="hover:text-emerald-400 transition-colors"
+                >
+                  TCO-Kostenrechner
                 </a>
               </li>
               <li>
-                <a href="#matrix" className="hover:text-emerald-400 transition-colors">
+                <a
+                  href="/#matrix"
+                  onClick={(e) => handleAnchorClick(e, 'matrix')}
+                  className="hover:text-emerald-400 transition-colors"
+                >
                   Geräte-Matrix
                 </a>
               </li>
               <li>
-                <a href="#bonus" className="hover:text-emerald-400 transition-colors">
-                  Reparaturbonus-Kompass
+                <a
+                  href="/#bonus"
+                  onClick={(e) => handleAnchorClick(e, 'bonus')}
+                  className="hover:text-emerald-400 transition-colors"
+                >
+                  Reparaturbonus-Status
                 </a>
               </li>
               <li>
-                <a href="#ratgeber" className="hover:text-emerald-400 transition-colors">
+                <a
+                  href="/#ratgeber"
+                  onClick={(e) => handleAnchorClick(e, 'ratgeber')}
+                  className="hover:text-emerald-400 transition-colors"
+                >
                   Juristischer Ratgeber
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-emerald-400 transition-colors">
+                <a
+                  href="/#faq"
+                  onClick={(e) => handleAnchorClick(e, 'faq')}
+                  className="hover:text-emerald-400 transition-colors"
+                >
                   Häufige Fragen (FAQ)
                 </a>
               </li>
@@ -88,7 +123,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <span className="text-slate-400">Richtlinie (EU) 2024/1799</span>
               </li>
               <li>
-                <span className="text-slate-400">EU-Ökodesign ESPR</span>
+                <span className="text-slate-400">EU-Ökodesign (ESPR)</span>
               </li>
               <li>
                 <span className="text-slate-400">BGB §§ 437 ff.</span>
@@ -96,17 +131,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Col 5: Disclaimer & Trust */}
+          {/* Col 5: Disclaimer */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
               Transparenz
             </h4>
             <div className="space-y-2 text-[11px] text-slate-400 leading-relaxed">
               <p>
-                <strong className="text-slate-200">Unabhängigkeit:</strong> Dieses Portal ist ein unabhängiges, nicht-kommerzielles Informationsangebot und steht in keinem gesellschaftsrechtlichen Verhältnis zu den genannten Herstellern.
+                <strong className="text-slate-200">Unabhängigkeit:</strong> Dieses Portal steht in keinem gesellschaftsrechtlichen Verhältnis zu den genannten Herstellern.
               </p>
               <p>
-                <strong className="text-slate-200">Reine Infoseite:</strong> Sämtliche Inhalte dienen der sachlichen Verbraucheraufklärung. Es werden keine Affiliate-Links oder Werbeprovisionen eingesetzt.
+                <strong className="text-slate-200">Infoseite:</strong> Sämtliche Inhalte dienen der sachlichen Verbraucheraufklärung und Rechtsorientierung.
               </p>
             </div>
           </div>
@@ -122,9 +157,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Impressum (§ 5 DDG)
             </button>
             <button onClick={() => onNavigate('datenschutz')} className="hover:text-slate-200">
-              Datenschutz
+              Datenschutzerklärung
             </button>
-            <span className="text-slate-400">Zero-CDN • WCAG AAA Konform</span>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, Calculator, Sparkles, Scale, Clock, RefreshCw, BookmarkCheck, Calendar, Award } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Calculator, Sparkles, Scale, Clock, RefreshCw, BookmarkCheck, Calendar, FileText } from 'lucide-react';
 
 interface HeroProps {
   onScrollTo: (id: string) => void;
@@ -27,19 +27,18 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
-            Ihr unabhängiger Leitfaden zum europäischen <strong>Recht auf Reparatur (EU-Richtlinie 2024/1799)</strong>:
-            Gesetzliche Ersatzteilfristen (7–10 Jahre), Ansprüche gegen Hersteller, bis zu 200&nbsp;€ Reparaturbonus
-            und fundierter Reparatur-vs.-Neukauf-Rechner.
+            Orientierungshilfe zu Verbraucherrechten, EU-Ökodesign-Ersatzteilpflichten (7–10 Jahre), 
+            dem Status regionaler Förderprogramme und vereinfachtem Wirtschaftlichkeits-Rechner.
           </p>
 
-          {/* Position-0 Featured Snippet Definition Box (Google AI Overviews & Rich Snippet) */}
+          {/* Position-0 Featured Snippet Definition Box */}
           <div className="mb-8 bg-emerald-50/70 border-l-4 border-emerald-600 rounded-r-2xl p-5 sm:p-6 shadow-sm text-left">
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-950 mb-2">
               <BookmarkCheck className="w-4 h-4 text-emerald-600" />
               <span>Auf den Punkt gebracht: Was regelt das Recht auf Reparatur?</span>
             </div>
             <p className="text-slate-950 font-bold text-sm sm:text-base leading-snug">
-              Das europäische <strong>Recht auf Reparatur</strong> (Richtlinie (EU) 2024/1799) stärkt Verbraucher und Fachbetriebe: Hersteller müssen Reparaturen zu angemessenen Preisen auch nach Ablauf der Garantie anbieten, Original-Ersatzteile für 7 bis 10 Jahre bereitstellen und Software-Sperren (Part-Pairing) gegen freie Werkstätten unterlassen.
+              Das europäische <strong>Recht auf Reparatur</strong> (Richtlinie (EU) 2024/1799) stärkt Verbraucher und Fachbetriebe: Hersteller müssen Reparaturen zu angemessenen Preisen auch nach Ablauf der Garantie anbieten, Original-Ersatzteile für 7 bis 10 Jahre bereitstellen (für erfasste Produktgruppen) und Software-Sperren (Part-Pairing) gegen freie Werkstätten unterlassen.
             </p>
             <div className="mt-3 flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-600 pt-2 border-t border-emerald-200/60">
               <span className="flex items-center gap-1.5">
@@ -49,10 +48,6 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-emerald-600" />
                 Gültigkeit: <strong>Deutschland &amp; EU</strong>
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Award className="w-3.5 h-3.5 text-amber-700" />
-                Verbraucherschutzkonform
               </span>
             </div>
           </div>
@@ -75,19 +70,19 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
             </button>
           </div>
 
-          {/* Verified Trust Badges */}
+          {/* Verified Trust Notes */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              100 % unabhängig &amp; werbefrei recherchiert
+              Redaktionell verifizierte EU-Verordnungen
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              Aktuelle EU-Ökodesign-Vorgaben
+              Aktuelle Ökodesign-Vorgaben
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              Keine versteckten Gebühren
+              Transparente Modellrechnungen
             </span>
           </div>
         </div>
@@ -105,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
             <div className="text-3xl font-extrabold text-slate-950 mb-1">Bis zu 10 Jahre</div>
             <div className="text-sm font-bold text-emerald-800 mb-2">Ersatzteil-Bereithaltung</div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Hersteller von Haushaltsgeräten müssen Ersatzteile über 7 bis 10 Jahre vorhalten und binnen maximal 15 Werktagen liefern.
+              Hersteller von erfassten Haushaltsgeräten müssen Ersatzteile über 7 bis 10 Jahre vorhalten und binnen max. 10 bis 15 Werktagen liefern.
             </p>
           </div>
 
@@ -117,25 +112,25 @@ export const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
               </div>
               <span className="badge-amber">+12 Monate</span>
             </div>
-            <div className="text-3xl font-extrabold text-slate-950 mb-1">+1 Jahr Schutz</div>
-            <div className="text-sm font-bold text-amber-900 mb-2">Gewährleistungs-Verlängerung</div>
+            <div className="text-3xl font-extrabold text-slate-950 mb-1">Gewährleistung</div>
+            <div className="text-sm font-bold text-amber-800 mb-2">Verlängerung nach Reparatur</div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Entscheiden Sie sich innerhalb der gesetzlichen Sachmängelhaftung für eine Reparatur, verlängert die EU-Richtlinie Ihren Schutz um 12 Monate.
+              Nach der EU-Richtlinie 2024/1799 verlängert eine Reparatur innerhalb der 2-jährigen Händlergewährleistung die Sachmängelhaftung um 12 zusätzliche Monate (ab nationaler Umsetzung).
             </p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-slate-900" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-slate-800" />
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900">
-                <Scale className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800">
+                <FileText className="w-6 h-6" />
               </div>
-              <span className="badge-slate">Förderzuschuss</span>
+              <span className="badge-slate">EU-Standards</span>
             </div>
-            <div className="text-3xl font-extrabold text-slate-950 mb-1">Bis zu 200 €</div>
-            <div className="text-sm font-bold text-slate-900 mb-2">Staatlicher Reparaturbonus</div>
+            <div className="text-3xl font-extrabold text-slate-950 mb-1">Part-Pairing</div>
+            <div className="text-sm font-bold text-slate-800 mb-2">Verbot von Software-Sperren</div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Bundesländer wie Thüringen, Sachsen und Berlin erstatten 50 % der Rechnungssumme bei Instandsetzung durch qualifizierte Betriebe.
+              Hersteller dürfen den Austausch von Bauteilen durch freie Werkstätten oder Selbstreparatur nicht durch künstliche Software-Hürden blockieren.
             </p>
           </div>
         </div>

@@ -98,34 +98,23 @@ export const Impressum: React.FC<ImpressumProps> = ({ onBack }) => {
           {/* Verbraucherstreitbeilegung */}
           <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
             <h2 className="text-lg font-bold text-slate-950 mb-3">
-              Verbraucherstreitbeilegung &amp; Online-Streitbeilegung
+              Verbraucherstreitbeilegung
             </h2>
-            <p className="text-xs text-slate-600 leading-relaxed mb-3">
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die Sie unter folgendem Link finden:{' '}
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald-700 underline font-bold"
-              >
-                https://ec.europa.eu/consumers/odr
-              </a>.
-            </p>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+              Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. Die frühere Online-Streitbeilegungsplattform der Europäischen Kommission (OS-Plattform) wurde eingestellt.
             </p>
           </section>
 
           {/* Transparenzhinweis Unabhängiges Informationsportal */}
           <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
             <h2 className="text-lg font-bold text-slate-950 mb-3">
-              Unabhängigkeit &amp; Nicht-kommerzieller Informationscharakter
+              Unabhängigkeit &amp; Anzeigenschaltung
             </h2>
             <p className="text-xs text-slate-600 leading-relaxed mb-3">
-              Dieses Portal (reparaturpflicht.de) ist ein rein redaktionelles, unabhängiges Informationsangebot. Es steht in keinem gesellschaftsrechtlichen Verhältnis zu den auf dieser Webseite genannten Herstellern, Marken oder Reparaturbetrieben. Alle genannten Markennamen und Warenzeichen sind Eigentum der jeweiligen Rechteinhaber und dienen ausschließlich der sachlichen Information und Geräteidentifikation.
+              Dieses Portal (reparaturpflicht.de) ist ein redaktionelles Informationsangebot. Es steht in keinem gesellschaftsrechtlichen Verhältnis zu den auf dieser Webseite genannten Herstellern, Marken oder Reparaturbetrieben. Alle genannten Markennamen und Warenzeichen sind Eigentum der jeweiligen Rechteinhaber.
             </p>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Dieses Portal verzichtet bewusst auf Affiliate- und Werbelinks. Sämtliche bereitgestellten Inhalte, Prüf-Tools und Modellrechner sind kostenfrei und dienen der neutralen Verbraucheraufklärung.
+              Zur Verringerung der Betriebskosten können auf diesem Portal Online-Anzeigen (z. B. über Google AdSense) eingebunden werden. Nähere Einzelheiten zur Datenverarbeitung finden Sie in unserer Datenschutzerklärung.
             </p>
           </section>
         </div>

@@ -14,23 +14,21 @@ import { Impressum } from './pages/Impressum';
 import { Datenschutz } from './pages/Datenschutz';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import { VercelAnalytics } from './components/VercelAnalytics';
 
-export function App() {
-  const [currentView, setCurrentView] = useState<string>('home');
+export default function App({ initialPath }: { initialPath?: string } = {}) {
+  const getInitialView = () => {
+    const rawPath = initialPath !== undefined ? initialPath : (typeof window !== 'undefined' ? window.location.pathname : '/');
+    const path = rawPath.toLowerCase().replace(/^\/|\/$/g, '');
+    if (path === 'impressum' || path === 'zimpressum') return 'impressum';
+    if (path === 'datenschutz') return 'datenschutz';
+    if (path === 'rechner-embed') return 'rechner-embed';
+    return 'home';
+  };
+  const [currentView, setCurrentView] = useState<string>(getInitialView);
   const [embedCopied, setEmbedCopied] = useState(false);
 
   useEffect(() => {
-    // Parse current pathname on mount
-    const path = window.location.pathname.toLowerCase().replace(/^\/|\/$/g, '');
-    if (path === 'impressum' || path === 'zimpressum') {
-      setCurrentView('impressum');
-    } else if (path === 'datenschutz') {
-      setCurrentView('datenschutz');
-    } else if (path === 'rechner-embed') {
-      setCurrentView('rechner-embed');
-    }
-
+    if (typeof window === 'undefined') return;
     const handlePopState = () => {
       const currentPath = window.location.pathname.toLowerCase().replace(/^\/|\/$/g, '');
       if (currentPath === 'impressum' || currentPath === 'zimpressum') {
@@ -47,6 +45,39 @@ export function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Update Route-specific SEO Metadata & Canonicals dynamically
+  useEffect(() => {
+    let title = 'Recht auf Reparatur 2026 | Gesetz, Pflichten & Check';
+    let canonical = 'https://reparaturpflicht.de/';
+    let metaDescription = 'Recht auf Reparatur in Deutschland (EU-Richtlinie 2024/1799): Gesetzliche Pflichten der Hersteller, 7–10 Jahre Ersatzteile, Reparaturbonus & Kosten-Modellrechner.';
+
+    if (currentView === 'impressum') {
+      title = 'Impressum | reparaturpflicht.de';
+      canonical = 'https://reparaturpflicht.de/impressum';
+      metaDescription = 'Rechtliche Anbieterkennzeichnung und Kontaktdaten von reparaturpflicht.de (Jens Kathe, Kassel) gemäß § 5 DDG.';
+    } else if (currentView === 'datenschutz') {
+      title = 'Datenschutzerklärung | reparaturpflicht.de';
+      canonical = 'https://reparaturpflicht.de/datenschutz';
+      metaDescription = 'Datenschutzinformationen zur Verarbeitung personenbezogener Daten, Vercel Hosting und AdSense auf reparaturpflicht.de.';
+    } else if (currentView === 'rechner-embed') {
+      title = 'Reparatur Ersparnisrechner Widget | reparaturpflicht.de';
+      canonical = 'https://reparaturpflicht.de/rechner-embed';
+      metaDescription = 'Interaktiver Reparatur vs. Neukauf Ersparnisrechner zum Einbinden auf externen Webseiten.';
+    }
+
+    document.title = title;
+
+    let canonicalEl = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonicalEl) {
+      canonicalEl.href = canonical;
+    }
+
+    let metaDescEl = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (metaDescEl) {
+      metaDescEl.content = metaDescription;
+    }
+  }, [currentView]);
 
   const navigateTo = (view: string) => {
     setCurrentView(view);
@@ -83,7 +114,7 @@ export function App() {
   };
 
   const copyEmbedCode = () => {
-    const code = `<iframe src="https://reparaturpflicht.de/rechner-embed" width="100%" height="750" frameborder="0" style="border:none; border-radius:16px; overflow:hidden; max-width:860px; box-shadow:0 4px 20px rgba(0,0,0,0.08);" title="Reparatur Ersparnisrechner"></iframe>\n<p style="font-size:12px;color:#64748b;margin-top:6px;">Bereitgestellt von <a href="https://reparaturpflicht.de" target="_blank" rel="noopener" style="color:#047857;text-decoration:underline;font-weight:bold;">reparaturpflicht.de</a></p>`;
+    const code = `<iframe src="https://reparaturpflicht.de/rechner-embed" width="100%" height="680" frameborder="0" style="border:none; border-radius:16px; overflow:hidden; max-width:860px; min-height:680px;" title="Reparatur Ersparnisrechner"></iframe>\n<p style="font-size:12px;color:#64748b;margin-top:6px;">Bereitgestellt von <a href="https://reparaturpflicht.de" target="_blank" rel="noopener" style="color:#047857;text-decoration:underline;font-weight:bold;">reparaturpflicht.de</a></p>`;
     navigator.clipboard.writeText(code);
     setEmbedCopied(true);
     setTimeout(() => setEmbedCopied(false), 2500);
@@ -93,13 +124,13 @@ export function App() {
   if (currentView === 'rechner-embed') {
     return (
       <div className="min-h-screen bg-slate-50 p-2 sm:p-4 text-slate-900 flex flex-col justify-between">
-        <SavingsCalculator />
-        <div className="text-center py-3 text-xs font-semibold text-slate-500 border-t border-slate-200 mt-6 bg-white/80 rounded-xl p-3 shadow-xs">
-          Berechnung nach EU-Richtlinie 2024/1799 · Widget bereitgestellt von{' '}
+        <SavingsCalculator isEmbed={true} />
+        <div className="text-center py-2.5 text-xs font-semibold text-slate-500 border-t border-slate-200 mt-4 bg-white/90 rounded-xl p-2.5 shadow-xs">
+          Modellrechnung TCO · Widget bereitgestellt von{' '}
           <a
             href="https://reparaturpflicht.de"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="text-emerald-700 hover:text-emerald-800 font-extrabold hover:underline"
           >
             reparaturpflicht.de – Recht auf Reparatur
@@ -123,20 +154,24 @@ export function App() {
             <Hero onScrollTo={scrollToSection} />
             <DutyChecker />
             <SavingsCalculator />
+            <ComplianceMatrix />
+            <BonusGuide />
+            <LegalGuide />
+            <FaqSection />
 
-            {/* Embed Widget Box (Backlink Magnet) */}
+            {/* Embed Widget Box */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 my-16">
               <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
                   <div>
                     <span className="text-xs font-black uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                      Kostenloses Website-Widget
+                      Website-Widget
                     </span>
                     <h3 className="text-lg font-bold text-slate-950 mt-1">
                       Reparatur-Ersparnisrechner auf Ihrer Website einbinden
                     </h3>
                     <p className="text-xs text-slate-500 font-medium">
-                      Ideal für Werkstätten, Elektronik-Blogs, Verbraucherportale und Repair-Cafés.
+                      Ideal für Werkstätten, Blogs, Verbraucherportale und Repair-Cafés (Empfohlene Mindesthöhe: 680 px).
                     </p>
                   </div>
                   <button
@@ -147,58 +182,19 @@ export function App() {
                   </button>
                 </div>
                 <div className="mt-4 bg-slate-900 text-slate-300 p-3.5 rounded-xl font-mono text-xs overflow-x-auto select-all">
-                  <code>{`<iframe src="https://reparaturpflicht.de/rechner-embed" width="100%" height="750" frameborder="0"></iframe>`}</code>
+                  <code>{`<iframe src="https://reparaturpflicht.de/rechner-embed" width="100%" height="680" frameborder="0" style="border:none; border-radius:16px; min-height:680px;"></iframe>`}</code>
                 </div>
               </div>
             </div>
-
-            <ComplianceMatrix />
-            <BonusGuide />
-            <LegalGuide />
-
-            {/* E-E-A-T Editorial Trust Box */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-              <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-6 border-b border-slate-100">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-black text-lg shadow-md shrink-0">
-                      RP
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-black text-slate-950 text-base">Fachredaktion reparaturpflicht.de</span>
-                        <span className="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-black rounded-full uppercase tracking-wider border border-emerald-200">
-                          Geprüfter Stand: September 2026
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-500 font-medium mt-0.5">
-                        Juristische &amp; ökodesign-rechtliche Analyse nach Richtlinie (EU) 2024/1799 &amp; BGB-Verbraucherrecht
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-200 self-start sm:self-auto">
-                    <span>EU-Konformität geprüft</span>
-                  </div>
-                </div>
-                <div className="pt-5 text-xs text-slate-600 leading-relaxed font-medium">
-                  Unsere Fachredaktion analysiert europäische Gesetzgebungsverfahren im Bereich Right-to-Repair und Kreislaufwirtschaft. Alle Angaben zu Ersatzteilfristen und Herstellerpflichten basieren auf amtlichen Veröffentlichungen des Europäischen Parlaments und des Bundesministeriums für Umwelt, Naturschutz und nukleare Sicherheit (BMUV).
-                </div>
-              </div>
-            </div>
-
-            <FaqSection />
-            <StickyMobileBar onCheckRights={() => scrollToSection('pflichten-check')} />
           </>
         )}
       </main>
 
       <Footer onNavigate={navigateTo} />
+      {currentView === 'home' && <StickyMobileBar onCheckRights={() => scrollToSection('pflichten-check')} />}
       <ScrollToTop />
       <Analytics />
       <SpeedInsights />
-      <VercelAnalytics currentView={currentView} />
     </div>
   );
 }
-
-export default App;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Shield, Mail, Phone, MapPin, Scale } from 'lucide-react';
+import { ArrowLeft, Shield, Mail, Phone, MapPin } from 'lucide-react';
 
 interface ImpressumProps {
   onBack: () => void;
@@ -65,20 +65,6 @@ export const Impressum: React.FC<ImpressumProps> = ({ onBack }) => {
                 </a>
               </p>
             </div>
-          </section>
-
-          {/* Steuerlicher Status */}
-          <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h2 className="text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-              <Scale className="w-5 h-5 text-emerald-600" />
-              Umsatzsteuer &amp; Besteuerung
-            </h2>
-            <p className="font-bold text-slate-900">
-              Kleinunternehmer nach § 19 UStG
-            </p>
-            <p className="text-xs text-slate-500 mt-1">
-              Als Kleinunternehmer im Sinne von § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet oder gesondert ausgewiesen.
-            </p>
           </section>
 
           {/* Redaktionell Verantwortlicher */}

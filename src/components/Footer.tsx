@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Unabhängiges Informationsportal zum europäischen Recht auf Reparatur (EU-Richtlinie 2024/1799) und deutschen Ökodesign-Vorgaben. Für längere Gerätenutzung und nachvollziehbare Verbraucherrechte.
             </p>
             <div className="pt-2 text-[11px] text-slate-400 space-y-1">
-              <p>Redaktioneller Leitfaden • Kleinunternehmer nach § 19 UStG</p>
+              <p>Redaktioneller Leitfaden</p>
               <p>Vollständige Betreiberangaben siehe Impressum</p>
             </div>
           </div>

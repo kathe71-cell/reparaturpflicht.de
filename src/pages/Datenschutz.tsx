@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Shield, Lock, Server, UserCheck, Eye } from 'lucide-react';
+import { ArrowLeft, Shield, Lock, Server, UserCheck } from 'lucide-react';
 
 interface DatenschutzProps {
   onBack: () => void;
@@ -23,7 +23,7 @@ export const Datenschutz: React.FC<DatenschutzProps> = ({ onBack }) => {
             Datenschutzerklärung
           </h1>
           <p className="text-sm text-slate-600 mt-1">
-            Transparente Angaben über Datenverarbeitung, Hosting und Werbenetzwerke auf reparaturpflicht.de
+            Transparente Angaben über Datenverarbeitung und Hosting auf reparaturpflicht.de
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export const Datenschutz: React.FC<DatenschutzProps> = ({ onBack }) => {
               Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO, TDDDG) sowie dieser Datenschutzerklärung.
             </p>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Auf dieser Webseite werden zur technischen Bereitstellung, Reichweitenanalyse und Anzeigenvermarktung Skripte externer Dienstleister (Vercel Inc., Google Ireland Limited) eingebunden.
+              Auf dieser Webseite werden zur technischen Bereitstellung und Reichweitenanalyse Skripte externer Dienstleister (Vercel Inc.) eingebunden.
             </p>
           </section>
 
@@ -67,49 +67,33 @@ export const Datenschutz: React.FC<DatenschutzProps> = ({ onBack }) => {
             </p>
           </section>
 
-          {/* 4. Google AdSense & Funding Choices */}
-          <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h2 className="text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-              <Eye className="w-5 h-5 text-emerald-600" />
-              4. Werbedienste &amp; Google AdSense
-            </h2>
-            <p className="text-xs text-slate-600 leading-relaxed mb-3">
-              Diese Webseite nutzt Google AdSense, einen Dienst der Google Ireland Limited („Google“), Gordon House, Barrow Street, Dublin 4, Irland. Hierbei wird das Skript <code>adsbygoogle.js</code> eingebunden.
-            </p>
-            <p className="text-xs text-slate-600 leading-relaxed mb-3">
-              Google AdSense verwendet Cookies und Web Beacons zur Schaltung von Werbung. Hierbei können IP-Adressen und Geräteinformationen an Server von Google übermittelt werden. Die Einwilligung zur Speicherung von Cookies und zum Zugriff auf Endgeräteinformationen erfolgt über das Google Consent Banner (Funding Choices).
-            </p>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) bzw. Art. 6 Abs. 1 lit. f DSGVO.
-            </p>
-          </section>
 
-          {/* 5. Vercel Web Analytics */}
+          {/* 4. Vercel Web Analytics */}
           <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
             <h2 className="text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
               <Shield className="w-5 h-5 text-emerald-600" />
-              5. Vercel Web Analytics
+              4. Vercel Web Analytics
             </h2>
             <p className="text-xs text-slate-600 leading-relaxed">
               Wir nutzen Vercel Web Analytics zur anonymisierten statistischen Auswertung der Besucherzahlen. Der Dienst speichert keine dauerhaften Tracking-Cookies auf Ihrem Endgerät und pseudonymisiert IP-Adressen direkt bei der Übertragung.
             </p>
           </section>
 
-          {/* 6. Interaktive Tools */}
+          {/* 5. Interaktive Tools */}
           <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
             <h2 className="text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
               <Lock className="w-5 h-5 text-emerald-600" />
-              6. Clientseitige Ausführung der Prüf-Tools
+              5. Clientseitige Ausführung der Prüf-Tools
             </h2>
             <p className="text-xs text-slate-600 leading-relaxed">
               Der interaktive Rechte-Prüfer und der Wirtschaftlichkeitsrechner arbeiten lokal in Ihrem Browser. Ihre Eingaben (Gerätealter, Preis, Mangelart) werden nicht auf unseren Servern gespeichert.
             </p>
           </section>
 
-          {/* 7. Betroffenenrechte */}
+          {/* 6. Betroffenenrechte */}
           <section className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
             <h2 className="text-lg font-bold text-slate-950 mb-3">
-              7. Ihre Betroffenenrechte
+              6. Ihre Betroffenenrechte
             </h2>
             <p className="text-xs text-slate-600 leading-relaxed">
               Sie haben jederzeit das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie das Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO) und Beschwerde bei der zuständigen Datenschutzaufsichtsbehörde (Art. 77 DSGVO). Zur Ausübung Ihrer Rechte wenden Sie sich an jens@kathe.org.

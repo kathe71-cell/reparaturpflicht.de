@@ -60,7 +60,7 @@ export const Datenschutz: React.FC<DatenschutzProps> = ({ onBack }) => {
               3. Hosting (Vercel Inc.) &amp; Server-Logs
             </h2>
             <p className="text-xs text-slate-600 leading-relaxed mb-3">
-              Diese Webseite wird bei Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA) gehostet. Beim Aufruf der Seite erfasst Vercel automatische Server-Log-Dateien (u. a. IP-Adresse, IP-Standort, Browsertyp, Zeitpunkt der Anfrage).
+              Diese Webseite wird bei Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, USA) gehostet. Beim Aufruf der Seite erfasst Vercel automatische Server-Log-Dateien (u. a. IP-Adresse, IP-Standort, Browsertyp, Zeitpunkt der Anfrage).
             </p>
             <p className="text-xs text-slate-600 leading-relaxed">
               Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und schnellen Bereitstellung unseres Online-Angebots).
@@ -112,7 +112,7 @@ export const Datenschutz: React.FC<DatenschutzProps> = ({ onBack }) => {
               7. Ihre Betroffenenrechte
             </h2>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Sie haben jederzeit das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO) sowie das Recht auf Datenübertragbarkeit und Beschwerde bei einer Aufsichtsbehörde.
+              Sie haben jederzeit das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie das Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO) und Beschwerde bei der zuständigen Datenschutzaufsichtsbehörde (Art. 77 DSGVO). Zur Ausübung Ihrer Rechte wenden Sie sich an jens@kathe.org.
             </p>
           </section>
         </div>

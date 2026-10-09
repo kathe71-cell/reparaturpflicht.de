@@ -1,3 +1,4 @@
+import ProjektuebernahmePage from "./pages/ProjektuebernahmePage";
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -52,14 +53,13 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
     let canonical = 'https://reparaturpflicht.de/';
     let metaDescription = 'Recht auf Reparatur in Deutschland (EU-Richtlinie 2024/1799): Gesetzliche Pflichten der Hersteller, 7–10 Jahre Ersatzteile, Reparaturbonus & Kosten-Modellrechner.';
 
-    if (currentView === 'impressum') {
+    if (currentView === 'projektuebernahme' ? <ProjektuebernahmePage /> : currentView === 'impressum') {
       title = 'Impressum | reparaturpflicht.de';
       canonical = 'https://reparaturpflicht.de/impressum';
       metaDescription = 'Rechtliche Anbieterkennzeichnung und Kontaktdaten von reparaturpflicht.de (Jens Kathe, Kassel) gemäß § 5 DDG.';
     } else if (currentView === 'datenschutz') {
       title = 'Datenschutzerklärung | reparaturpflicht.de';
       canonical = 'https://reparaturpflicht.de/datenschutz';
-      metaDescription = 'Datenschutzinformationen zur Verarbeitung personenbezogener Daten, Vercel Hosting und AdSense auf reparaturpflicht.de.';
     } else if (currentView === 'rechner-embed') {
       title = 'Reparatur Ersparnisrechner Widget | reparaturpflicht.de';
       canonical = 'https://reparaturpflicht.de/rechner-embed';
@@ -145,7 +145,7 @@ export default function App({ initialPath }: { initialPath?: string } = {}) {
       <Navbar currentView={currentView} onNavigate={navigateTo} />
 
       <main className="flex-1">
-        {currentView === 'impressum' ? (
+        {currentView === 'projektuebernahme' ? <ProjektuebernahmePage /> : currentView === 'impressum' ? (
           <Impressum onBack={() => navigateTo('home')} />
         ) : currentView === 'datenschutz' ? (
           <Datenschutz onBack={() => navigateTo('home')} />

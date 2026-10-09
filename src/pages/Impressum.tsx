@@ -91,7 +91,6 @@ export const Impressum: React.FC<ImpressumProps> = ({ onBack }) => {
               Dieses Portal (reparaturpflicht.de) ist ein redaktionelles Informationsangebot. Es steht in keinem gesellschaftsrechtlichen Verhältnis zu den auf dieser Webseite genannten Herstellern, Marken oder Reparaturbetrieben. Alle genannten Markennamen und Warenzeichen sind Eigentum der jeweiligen Rechteinhaber.
             </p>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Zur Verringerung der Betriebskosten können auf diesem Portal Online-Anzeigen (z. B. über Google AdSense) eingebunden werden. Nähere Einzelheiten zur Datenverarbeitung finden Sie in unserer Datenschutzerklärung.
             </p>
           </section>
         </div>
